@@ -3,15 +3,118 @@
 :root {
   --background: var(--color-neutral-950);
   --foreground: var(--color-neutral-50);
+  --muted: var(--color-neutral-900);
+  --muted-foreground: var(--color-neutral-400);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-martian-grotesk);
+  --font-mono: var(--font-martian-mono);
+  /* 10px */
+  --text-xs: 0.625rem;
+  /* 12.5px */
+  --text-sm: 0.78125rem;
+  /* 15px */
+  --text-md: 0.9375rem;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+@layer base {
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: var(--background);
+    color: var(--color-foreground);
+    font-family: var(--font-martian-grotesk);
+    font-size: var(--text-md);
+  }
+
+  pre {
+    overflow-x: auto;
+    max-width: 100%;
+    background-color: transparent !important;
+    border-radius: var(--radius-md);
+    scrollbar-width: thin;
+
+    code {
+      background-color: var(--muted);
+      font-family: var(--font-martian-mono);
+      font-size: var(--text-sm);
+      padding-block: calc(var(--spacing) * 4);
+      isolation: isolate;
+      display: block;
+      width: fit-content;
+      min-width: 100%;
+      counter-reset: line;
+      border-radius: var(--radius-md);
+
+      .line {
+        display: inline-block;
+        width: 100%;
+        counter-increment: line;
+
+        &::before {
+          pointer-events: none;
+          position: sticky;
+          left: 0;
+          z-index: 20;
+          display: inline-block;
+          width: 1.5rem;
+          background: linear-gradient(
+            to right,
+            var(--color-muted) 80%,
+            transparent
+          );
+          text-align: right;
+          color: var(--color-muted-foreground);
+          content: "";
+          user-select: none;
+          border-left: 2px solid var(--line-border-color);
+        }
+
+        [data-line-numbers="true"] &::before {
+          content: counter(line);
+          width: 2.75rem;
+          padding-right: 1rem;
+        }
+
+        &::after {
+          pointer-events: none;
+          position: sticky;
+          right: 0;
+          z-index: 10;
+          display: inline-block;
+          width: 1.5rem;
+          background: linear-gradient(
+            to left,
+            var(--color-muted) 35%,
+            transparent
+          );
+          content: " ";
+          user-select: none;
+        }
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .background-grid {
+    background: conic-gradient(
+      from 90deg at 50% 50%,
+      transparent 0deg 90deg,
+      var(--color-muted) 90deg 180deg,
+      transparent 180deg 270deg,
+      var(--color-muted) 270deg 360deg
+    );
+    background-size: 8px 8px;
+  }
 }

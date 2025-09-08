@@ -1,12 +1,29 @@
 export default function Home() {
   return (
-    <main className="w-full h-dvh grid place-content-center">
-      <h1 className="text-3xl">
-        Resilient{" "}
-        <span className="p-2 inline-grid place-content-center bg-neutral-700 rounded-md">
-          UI
-        </span>
-      </h1>
+    <main className="w-full flex-1 grid place-content-center px-4 py-16">
+      <div className="flex flex-col gap-y-0.5">
+        <p className="mt-0.5 text-xs text-muted-foreground font-mono">v0.1.0</p>
+        <h1
+          className="flex gap-x-2 items-center uppercase"
+          style={{
+            fontStretch: "200%",
+            fontWeight: "900",
+          }}
+        >
+          Resilient&mdash;UI
+        </h1>
+        <p className="text-xs text-muted-foreground font-mono uppercase">
+          by{" "}
+          <a
+            href="https://alexcarpenter.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
+            Alex Carpenter
+          </a>
+        </p>
+      </div>
     </main>
   );
 }
