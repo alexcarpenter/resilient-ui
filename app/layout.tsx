@@ -4,13 +4,13 @@ import "./globals.css";
 
 const fontSans = localFont({
   src: "../public/fonts/MartianGrotesk-VFVF.woff2",
-  variable: "--font-martian-grotesk",
+  variable: "--font-sans",
   display: "swap",
 });
 
 const fontMono = localFont({
   src: "../public/fonts/MartianMono-Regular.woff2",
-  variable: "--font-martian-mono",
+  variable: "--font-mono",
   display: "swap",
 });
 

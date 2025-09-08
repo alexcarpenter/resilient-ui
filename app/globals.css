@@ -1,25 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  --background: var(--color-neutral-950);
-  --foreground: var(--color-neutral-50);
-  --muted: var(--color-neutral-900);
-  --muted-foreground: var(--color-neutral-400);
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: var(--font-martian-grotesk);
-  --font-mono: var(--font-martian-mono);
-  /* 10px */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
   --text-xs: 0.625rem;
-  /* 12.5px */
   --text-sm: 0.78125rem;
-  /* 15px */
   --text-md: 0.9375rem;
+}
+
+:root {
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-neutral-50);
+  --muted: var(--color-neutral-900);
+  --muted-foreground: var(--color-neutral-400);
 }
 
 @layer base {
@@ -33,7 +30,6 @@
     min-height: 100%;
     background: var(--background);
     color: var(--color-foreground);
-    font-family: var(--font-martian-grotesk);
     font-size: var(--text-md);
   }
 
@@ -46,7 +42,6 @@
 
     code {
       background-color: var(--muted);
-      font-family: var(--font-martian-mono);
       font-size: var(--text-sm);
       padding-block: calc(var(--spacing) * 4);
       isolation: isolate;

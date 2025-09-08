@@ -17,7 +17,7 @@ export default function Home() {
           <a
             href="https://alexcarpenter.me"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="hover:text-foreground"
           >
             Alex Carpenter
