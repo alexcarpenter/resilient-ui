@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Changelog() {
   return (
     <>
-      <header className="mx-auto mt-32 mb-16 w-full max-w-prose">
+      <header className="mx-auto mt-32 mb-16 w-full max-w-prose px-4">
         <h1
           className="text-xl uppercase md:text-3xl"
           style={{
