@@ -8,6 +8,9 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  experimental: {
+    nftTracing: true,
+  },
 }
 
 export default withMDX(config)

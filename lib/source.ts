@@ -1,5 +1,6 @@
 import { createMDXSource } from "fumadocs-mdx"
 import { loader } from "fumadocs-core/source"
+import path from "path"
 import {
   docs,
   meta,
