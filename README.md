@@ -1,6 +1,6 @@
 # Resilient — UI
 
-> by [Alex Carpenter](https://alexcarpenter.me)
+> shadcn/ui registry by [Alex Carpenter](https://alexcarpenter.me)
 
 ## License
 
