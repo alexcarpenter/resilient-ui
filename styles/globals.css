@@ -39,6 +39,7 @@
     min-height: 100%;
     background: var(--background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
     font-size: var(--text-md);
   }
 
@@ -54,6 +55,7 @@
     code {
       background-color: var(--background);
       font-size: var(--text-sm);
+      font-family: var(--font-mono);
       padding-block: calc(var(--spacing) * 4);
       isolation: isolate;
       display: block;
