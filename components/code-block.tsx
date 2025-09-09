@@ -1,10 +1,10 @@
-import type { BundledLanguage } from "shiki";
-import { codeToHtml } from "shiki";
+import type { BundledLanguage } from "shiki"
+import { codeToHtml } from "shiki"
 
 interface Props extends React.ComponentProps<"div"> {
-  children: string;
-  lang: BundledLanguage;
-  lineNumbers?: boolean;
+  children: string
+  lang: BundledLanguage
+  lineNumbers?: boolean
 }
 
 export async function CodeBlock({
@@ -16,7 +16,7 @@ export async function CodeBlock({
   const html = await codeToHtml(children, {
     lang,
     theme: "vesper",
-  });
+  })
 
   return (
     <div
@@ -25,5 +25,5 @@ export async function CodeBlock({
       data-line-numbers={lineNumbers}
       dangerouslySetInnerHTML={{ __html: html }}
     />
-  );
+  )
 }

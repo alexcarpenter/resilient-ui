@@ -1,31 +1,31 @@
-"use client";
-import * as React from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { CheckIcon, CopyIcon } from "lucide-react";
+"use client"
+import * as React from "react"
+import { motion, AnimatePresence } from "motion/react"
+import { CheckIcon, CopyIcon } from "lucide-react"
 
 interface Props extends Omit<React.ComponentProps<"button">, "children"> {
-  value: string;
+  value: string
 }
 
 export function CopyButton({ value, onClick, ...props }: Props) {
   const [state, setState] = React.useOptimistic<"idle" | "copied" | "failed">(
     "idle"
-  );
-  const [, startTransition] = React.useTransition();
+  )
+  const [, startTransition] = React.useTransition()
   return (
     <button
       {...props}
       onClick={(e) => {
         startTransition(async () => {
           try {
-            await navigator.clipboard.writeText(value);
-            setState("copied");
-            onClick?.(e);
+            await navigator.clipboard.writeText(value)
+            setState("copied")
+            onClick?.(e)
           } catch (_) {
-            setState("failed");
+            setState("failed")
           }
-          await new Promise((resolve) => setTimeout(resolve, 2000));
-        });
+          await new Promise((resolve) => setTimeout(resolve, 2000))
+        })
       }}
       className="flex size-4 items-center justify-center transition-colors duration-200 ease-out will-change-transform"
     >
@@ -49,5 +49,5 @@ export function CopyButton({ value, onClick, ...props }: Props) {
         </motion.span>
       </AnimatePresence>
     </button>
-  );
+  )
 }

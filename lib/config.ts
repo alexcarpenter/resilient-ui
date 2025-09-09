@@ -22,4 +22,4 @@ export const siteConfig = {
       label: "Blocks",
     },
   ],
-};
+}

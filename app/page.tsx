@@ -1,10 +1,10 @@
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/lib/config"
 
 export default function Home() {
   return (
-    <main className="w-full flex-1 grid place-content-center px-4 py-16">
+    <main className="grid w-full flex-1 place-content-center px-4 py-16">
       <div className="flex flex-col gap-y-1">
-        <p className="text-xs text-muted-foreground font-mono flex justify-between items-center">
+        <p className="text-muted-foreground flex items-center justify-between font-mono text-xs">
           <span>v{siteConfig.version}</span>
           <a
             href={siteConfig.links.github}
@@ -16,7 +16,7 @@ export default function Home() {
           </a>
         </p>
         <h1
-          className="flex gap-x-2 items-center uppercase text-xl md:text-3xl"
+          className="flex items-center gap-x-2 text-xl uppercase md:text-3xl"
           style={{
             fontStretch: "200%",
             fontWeight: "900",
@@ -24,7 +24,7 @@ export default function Home() {
         >
           Resilient&mdash;UI
         </h1>
-        <p className="text-xs text-muted-foreground font-mono uppercase text-right">
+        <p className="text-muted-foreground text-right font-mono text-xs uppercase">
           by{" "}
           <a
             href="https://alexcarpenter.me"
@@ -37,5 +37,5 @@ export default function Home() {
         </p>
       </div>
     </main>
-  );
+  )
 }
