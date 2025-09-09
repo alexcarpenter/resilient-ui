@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "fumadocs-mdx && next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
     "build:registry": "pnpm dlx shadcn@latest build",
-    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@types/mdx": "2.0.13",
