@@ -4,11 +4,11 @@ import { mdxComponents } from "@/components/mdx-components"
 import Link from "next/link"
 
 interface PageProps {
-  params: Promise<{ slug?: string[] }>
+  params: { slug?: string[] }
 }
 
 export default async function ChangelogPage({ params }: PageProps) {
-  const { slug } = await params
+  const { slug } = params
 
   if (!slug || slug.length === 0) {
     return <ChangelogIndex />
@@ -57,7 +57,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params
+  const { slug } = params
 
   if (!slug || slug.length === 0) {
     return {
