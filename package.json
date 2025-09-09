@@ -9,7 +9,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "build:registry": "pnpm dlx shadcn@latest build",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "node_modules/.bin/fumadocs-mdx"
   },
   "dependencies": {
     "@types/mdx": "2.0.13",
