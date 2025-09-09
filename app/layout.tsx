@@ -18,7 +18,7 @@ const fontMono = localFont({
 
 export const metadata: Metadata = {
   title: "Resilient — UI",
-  description: "by Alex Carpenter",
+  description: "shadcn/ui registry by Alex Carpenter",
 };
 
 export default function RootLayout({
