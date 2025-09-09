@@ -5,7 +5,7 @@ export default function Home() {
     <main className="w-full flex-1 grid place-content-center px-4 py-16">
       <div className="flex flex-col gap-y-1">
         <p className="text-xs text-muted-foreground font-mono flex justify-between items-center">
-          <span>v0.1.0</span>
+          <span>v{siteConfig.version}</span>
           <a
             href={siteConfig.links.github}
             target="_blank"

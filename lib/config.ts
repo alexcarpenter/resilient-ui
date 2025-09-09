@@ -1,4 +1,5 @@
 export const siteConfig = {
+  version: "0.1.0",
   name: "resilient-ui",
   url: "https://resilient-ui.com",
   title: "Resilient — UI",
