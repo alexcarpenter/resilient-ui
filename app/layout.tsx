@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/lib/config";
 
 import "@/styles/globals.css";
 
@@ -17,8 +18,8 @@ const fontMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Resilient — UI",
-  description: "shadcn/ui registry by Alex Carpenter",
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({

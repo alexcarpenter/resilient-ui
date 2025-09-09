@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/config";
+
 export default function Home() {
   return (
     <main className="w-full flex-1 grid place-content-center px-4 py-16">
@@ -5,7 +7,7 @@ export default function Home() {
         <p className="text-xs text-muted-foreground font-mono flex justify-between items-center">
           <span>v0.1.0</span>
           <a
-            href="https://github.com/alexcarpenter/resilient-ui"
+            href={siteConfig.links.github}
             target="_blank"
             rel="noopener"
             className="hover:text-foreground transition-colors"
