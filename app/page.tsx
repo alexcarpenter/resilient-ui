@@ -16,7 +16,7 @@ export default function Home() {
           </a>
         </p>
         <h1
-          className="flex items-center gap-x-2 text-xl uppercase md:text-3xl"
+          className="text-xl uppercase md:text-3xl"
           style={{
             fontStretch: "200%",
             fontWeight: "900",
