@@ -24,7 +24,7 @@ export default function Guidelines() {
             fontStretch: "200%",
           }}
         >
-          On building resilient UI's.
+          On building resilient UI&rsquo;s.
         </p>
       </header>
     </>
