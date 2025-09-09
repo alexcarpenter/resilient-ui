@@ -43,6 +43,8 @@
   }
 
   pre {
+    --background: var(--color-neutral-900);
+    --foreground: var(--color-neutral-400);
     overflow-x: auto;
     max-width: 100%;
     background-color: transparent !important;
@@ -50,7 +52,7 @@
     scrollbar-width: thin;
 
     code {
-      background-color: var(--muted);
+      background-color: var(--background);
       font-size: var(--text-sm);
       padding-block: calc(var(--spacing) * 4);
       isolation: isolate;
@@ -74,14 +76,13 @@
           width: 1.5rem;
           background: linear-gradient(
             to right,
-            var(--color-muted) 80%,
+            var(--background) 80%,
             transparent
           );
+          color: var(--foreground);
           text-align: right;
-          color: var(--color-muted-foreground);
           content: "";
           user-select: none;
-          border-left: 2px solid var(--line-border-color);
         }
 
         [data-line-numbers="true"] &::before {
@@ -99,7 +100,7 @@
           width: 1.5rem;
           background: linear-gradient(
             to left,
-            var(--color-muted) 35%,
+            var(--background) 35%,
             transparent
           );
           content: " ";
