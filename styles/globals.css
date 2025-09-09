@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -13,9 +15,16 @@
 }
 
 :root {
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-950);
+  --muted: var(--color-neutral-200);
+  --muted-foreground: var(--color-neutral-600);
+}
+
+.dark {
   --background: var(--color-neutral-950);
   --foreground: var(--color-neutral-50);
-  --muted: var(--color-neutral-900);
+  --muted: var(--color-neutral-800);
   --muted-foreground: var(--color-neutral-400);
 }
 

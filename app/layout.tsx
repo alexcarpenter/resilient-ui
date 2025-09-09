@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+
+import "@/styles/globals.css";
 
 const fontSans = localFont({
   src: "../public/fonts/MartianGrotesk-VFVF.woff2",
@@ -25,10 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
-        <div className="h-3 background-grid" />
-        {children}
+        <ThemeProvider>
+          <div className="h-3 background-grid" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
