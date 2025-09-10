@@ -1,12 +1,19 @@
 import {
+  defineConfig,
   defineDocs,
   defineCollections,
   frontmatterSchema,
+  metaSchema,
 } from "fumadocs-mdx/config"
 import { z } from "zod"
 
-export const { docs, meta } = defineDocs({
-  dir: "./content/docs",
+export const docs = defineDocs({
+  docs: {
+    schema: frontmatterSchema,
+  },
+  meta: {
+    schema: metaSchema,
+  },
 })
 
 export const blog = defineCollections({
@@ -23,4 +30,10 @@ export const changelog = defineCollections({
   schema: frontmatterSchema.extend({
     published: z.string().date().or(z.date()),
   }),
+})
+
+export default defineConfig({
+  mdxOptions: {
+    // MDX options
+  },
 })

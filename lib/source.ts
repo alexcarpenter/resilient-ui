@@ -1,15 +1,10 @@
 import { createMDXSource } from "fumadocs-mdx"
 import { loader } from "fumadocs-core/source"
-import {
-  docs,
-  meta,
-  blog as blogPosts,
-  changelog as changelogPosts,
-} from "@/.source"
+import { docs, blog as blogPosts, changelog as changelogPosts } from "@/.source"
 
 export const docsSource = loader({
   baseUrl: "/docs",
-  source: createMDXSource(docs, meta),
+  source: docs.toFumadocsSource(),
 })
 
 export const blogSource = loader({
