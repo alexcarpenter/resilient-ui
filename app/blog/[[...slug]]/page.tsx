@@ -4,11 +4,11 @@ import { mdxComponents } from "@/components/mdx-components"
 import Link from "next/link"
 
 interface PageProps {
-  params: { slug?: string[] }
+  params: Promise<{ slug?: string[] }>
 }
 
 export default async function BlogPage({ params }: PageProps) {
-  const { slug } = params
+  const { slug } = await params
 
   if (!slug || slug.length === 0) {
     return <BlogIndex />
@@ -57,7 +57,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = params
+  const { slug } = await params
 
   if (!slug || slug.length === 0) {
     return {

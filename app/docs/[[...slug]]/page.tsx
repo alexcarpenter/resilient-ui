@@ -3,11 +3,11 @@ import { notFound } from "next/navigation"
 import { mdxComponents } from "@/components/mdx-components"
 
 interface PageProps {
-  params: { slug?: string[] }
+  params: Promise<{ slug?: string[] }>
 }
 
 export default async function DocsPage({ params }: PageProps) {
-  const { slug } = params
+  const { slug } = await params
 
   const page = docsSource.getPage(slug || [])
 
@@ -31,7 +31,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = params
+  const { slug } = await params
   const page = docsSource.getPage(slug || [])
 
   if (!page) return {}
