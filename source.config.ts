@@ -19,7 +19,9 @@ export const docs = defineDocs({
 export const blog = defineCollections({
   type: "doc",
   dir: "./content/blog",
-  schema: frontmatterSchema.extend({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
     published: z.string().date().or(z.date()).optional(),
   }),
 })
@@ -27,7 +29,9 @@ export const blog = defineCollections({
 export const changelog = defineCollections({
   type: "doc",
   dir: "./content/changelog",
-  schema: frontmatterSchema.extend({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
     published: z.string().date().or(z.date()),
   }),
 })
