@@ -6,12 +6,12 @@ import {
 import { z } from "zod"
 
 export const { docs, meta } = defineDocs({
-  dir: "content/docs",
+  dir: "./content/docs",
 })
 
 export const blog = defineCollections({
   type: "doc",
-  dir: "content/blog",
+  dir: "./content/blog",
   schema: frontmatterSchema.extend({
     published: z.string().date().or(z.date()).optional(),
   }),
@@ -19,7 +19,7 @@ export const blog = defineCollections({
 
 export const changelog = defineCollections({
   type: "doc",
-  dir: "content/changelog",
+  dir: "./content/changelog",
   schema: frontmatterSchema.extend({
     published: z.string().date().or(z.date()),
   }),
