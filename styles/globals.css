@@ -49,7 +49,6 @@
     overflow-x: auto;
     max-width: 100%;
     background-color: transparent !important;
-    border-radius: var(--radius-md);
     scrollbar-width: thin;
 
     code {
@@ -62,7 +61,6 @@
       width: fit-content;
       min-width: 100%;
       counter-reset: line;
-      border-radius: var(--radius-md);
 
       & span {
         color: var(--shiki-dark);
