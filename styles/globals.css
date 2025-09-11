@@ -64,6 +64,10 @@
       counter-reset: line;
       border-radius: var(--radius-md);
 
+      & span {
+        color: var(--shiki-dark);
+      }
+
       .line {
         display: inline-block;
         width: 100%;
@@ -91,6 +95,7 @@
           content: counter(line);
           width: 2.75rem;
           padding-right: 1rem;
+          color: #8b8b8b94;
         }
 
         &::after {

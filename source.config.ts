@@ -38,6 +38,11 @@ export const changelog = defineCollections({
 
 export default defineConfig({
   mdxOptions: {
-    // MDX options
+    rehypeCodeOptions: {
+      themes: {
+        light: "vesper",
+        dark: "vesper",
+      },
+    },
   },
 })
