@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { changelogSource } from "@/lib/source";
+import { blogSource } from "@/lib/source";
 
 export const metadata: Metadata = {
-  title: "Changelog",
-  description: "Changelog",
+  title: "Blog",
+  description: "Blog",
 };
 
 export default async function Page() {
-  const posts = changelogSource.getPages();
+  const posts = blogSource.getPages();
 
   return (
     <ul>

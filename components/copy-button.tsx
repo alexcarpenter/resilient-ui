@@ -21,7 +21,7 @@ export function CopyButton({ value, onClick, ...props }: Props) {
             await navigator.clipboard.writeText(value)
             setState("copied")
             onClick?.(e)
-          } catch (_) {
+          } catch {
             setState("failed")
           }
           await new Promise((resolve) => setTimeout(resolve, 2000))
