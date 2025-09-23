@@ -169,7 +169,7 @@ export function CodeBlockTabsList({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.List>) {
-  return <TabsPrimitive.List {...props} className={cn("px-0", className)} />
+  return <TabsPrimitive.List {...props} className={cn("px-4", className)} />
 }
 
 /* -----------------------------------------------------------------------------------------------*/
@@ -184,20 +184,16 @@ export function CodeBlockTabsTrigger({
       {...props}
       className={({ selected }) =>
         cn(
-          "relative h-11 rounded-t-lg border border-b-0 px-4 text-sm",
+          "relative -mb-px h-11 rounded-t-lg border border-b-0 bg-neutral-900 px-5 text-sm",
           {
-            "border-neutral-800 opacity-100": selected,
-            "border-transparent opacity-50 hover:opacity-100 [&_[data-tab-border]]:hidden":
+            "border-neutral-800 text-neutral-50": selected,
+            "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
               !selected,
           },
           className
         )
       }
     >
-      <span
-        data-tab-border
-        className="absolute -inset-x-px top-full h-px bg-neutral-900"
-      />
       {children}
     </TabsPrimitive.Tab>
   )
