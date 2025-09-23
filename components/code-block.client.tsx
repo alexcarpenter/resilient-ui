@@ -3,16 +3,18 @@ import {
   type ComponentProps,
   type ReactNode,
   type RefObject,
-  startTransition,
-  useContext,
   useOptimistic,
   useRef,
   useTransition,
 } from "react"
 import { cn } from "@/lib/utils"
-import { CheckIcon, Copy, CopyIcon } from "lucide-react"
+import { CheckIcon, CopyIcon } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
-import { is } from "zod/v4/locales"
+import { Tabs as TabsPrimitive } from "@base-ui-components/react/tabs"
+
+/* -------------------------------------------------------------------------------------------------
+ * CodeBlock
+ * -----------------------------------------------------------------------------------------------*/
 
 export interface CodeBlockProps extends ComponentProps<"figure"> {
   icon?: ReactNode
@@ -38,7 +40,7 @@ export function CodeBlock({
       )}
     >
       {title ? (
-        <div className="flex h-11 items-center gap-2 border-b border-neutral-800 px-4">
+        <div className="flex h-11 items-center gap-2 border-b border-neutral-800 bg-neutral-900 px-4">
           {typeof icon === "string" ? (
             <div
               className="text-[#99FFE4] [&_svg]:size-4"
@@ -58,6 +60,10 @@ export function CodeBlock({
   )
 }
 
+/* -------------------------------------------------------------------------------------------------
+ * Pre
+ * -----------------------------------------------------------------------------------------------*/
+
 export interface PreProps extends ComponentProps<"pre"> {}
 
 export function Pre(props: PreProps) {
@@ -67,6 +73,10 @@ export function Pre(props: PreProps) {
     </pre>
   )
 }
+
+/* -------------------------------------------------------------------------------------------------
+ * CopyButton
+ * -----------------------------------------------------------------------------------------------*/
 
 function CopyButton({
   className,
@@ -132,4 +142,72 @@ function CopyButton({
       </AnimatePresence>
     </button>
   )
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * CodeBlockTabs
+ * -----------------------------------------------------------------------------------------------*/
+
+export function CodeBlockTabs({
+  className,
+  ...props
+}: React.ComponentProps<typeof TabsPrimitive.Root>) {
+  return (
+    <TabsPrimitive.Root
+      {...props}
+      className={cn(
+        "rounded-[calc(var(--radius-lg)_+_calc(var(--spacing)_*_1))] bg-neutral-900 p-1",
+        className
+      )}
+    />
+  )
+}
+
+/* -----------------------------------------------------------------------------------------------*/
+
+export function CodeBlockTabsList({
+  className,
+  ...props
+}: React.ComponentProps<typeof TabsPrimitive.List>) {
+  return <TabsPrimitive.List {...props} className={cn("px-0", className)} />
+}
+
+/* -----------------------------------------------------------------------------------------------*/
+
+export function CodeBlockTabsTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof TabsPrimitive.Tab>) {
+  return (
+    <TabsPrimitive.Tab
+      {...props}
+      className={({ selected }) =>
+        cn(
+          "relative h-11 rounded-t-lg border border-b-0 px-4 text-sm",
+          {
+            "border-neutral-800 opacity-100": selected,
+            "border-transparent opacity-50 hover:opacity-100 [&_[data-tab-border]]:hidden":
+              !selected,
+          },
+          className
+        )
+      }
+    >
+      <span
+        data-tab-border
+        className="absolute -inset-x-px top-full h-px bg-neutral-900"
+      />
+      {children}
+    </TabsPrimitive.Tab>
+  )
+}
+
+/* -----------------------------------------------------------------------------------------------*/
+
+export function CodeBlockTab({
+  className,
+  ...props
+}: React.ComponentProps<typeof TabsPrimitive.Panel>) {
+  return <TabsPrimitive.Panel {...props} className={cn(className)} />
 }

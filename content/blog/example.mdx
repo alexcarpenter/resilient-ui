@@ -27,10 +27,27 @@ export async function CodeBlock({
 }
 ```
 
-```npm
-npx shadcn@latest add @resilient-ui/[name]
+```tsx tab="Tab 1" title="Hello World"
+export async function CodeBlock({
+  children,
+  lang,
+  ...rest
+}: HTMLAttributes<HTMLElement> & {
+  children: string
+  lang: string
+}) {
+  const rendered = await highlight(children, {
+    lang,
+    theme: "vesper",
+    components: {
+      pre: (props) => <Pre {...props} />,
+    },
+  })
+
+  return <CodeBlockClient {...rest}>{rendered}</CodeBlockClient>
+}
 ```
 
-```npm
-npx shadcn@latest add @resilient-ui/[name]
+```css tab="Tab 2" title="Testing"
+console.log('B');
 ```

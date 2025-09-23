@@ -1,31 +1,12 @@
 import React, { type HTMLAttributes } from "react"
 import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from "@/components/tabs-unstyled"
-import { Pre, CodeBlock } from "./code-block.client"
-
-export function CodeBlockTabs(props: React.ComponentProps<typeof Tabs>) {
-  return <Tabs {...props} />
-}
-
-export function CodeBlockTabsList(
-  props: React.ComponentProps<typeof TabsList>
-) {
-  return <TabsList {...props} />
-}
-
-export function CodeBlockTabsTrigger(
-  props: React.ComponentProps<typeof TabsTrigger>
-) {
-  return <TabsTrigger {...props} />
-}
-
-export function CodeBlockTab(props: React.ComponentProps<typeof TabsContent>) {
-  return <TabsContent {...props} />
-}
+  Pre,
+  CodeBlock,
+  CodeBlockTabs,
+  CodeBlockTabsList,
+  CodeBlockTabsTrigger,
+  CodeBlockTab,
+} from "./code-block.client"
 
 export const mdxComponents = {
   CodeBlockTabs,
