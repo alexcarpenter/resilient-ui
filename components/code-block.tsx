@@ -1,29 +1,22 @@
-import type { BundledLanguage } from "shiki"
-import { codeToHtml } from "shiki"
-
-interface Props extends React.ComponentProps<"div"> {
-  children: string
-  lang: BundledLanguage
-  lineNumbers?: boolean
-}
+import React, { type HTMLAttributes } from "react"
+import { highlight } from "fumadocs-core/highlight"
+import * as Base from "@/components/code-block.client"
 
 export async function CodeBlock({
   children,
   lang,
-  lineNumbers = true,
-  ...props
-}: Props) {
-  const html = await codeToHtml(children, {
+  ...rest
+}: HTMLAttributes<HTMLElement> & {
+  children: string
+  lang: string
+}) {
+  const rendered = await highlight(children, {
     lang,
     theme: "vesper",
+    components: {
+      pre: (props) => <Base.Pre {...props} />,
+    },
   })
 
-  return (
-    <div
-      {...props}
-      data-lang={lang}
-      data-line-numbers={lineNumbers}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  )
+  return <Base.CodeBlock {...rest}>{rendered}</Base.CodeBlock>
 }
