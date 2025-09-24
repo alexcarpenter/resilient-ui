@@ -64,9 +64,7 @@ export function CodeBlock({
  * Pre
  * -----------------------------------------------------------------------------------------------*/
 
-export interface PreProps extends ComponentProps<"pre"> {}
-
-export function Pre(props: PreProps) {
+export function Pre(props: ComponentProps<"pre">) {
   return (
     <pre {...props} className={cn("w-full", props.className)}>
       {props.children}
@@ -184,7 +182,7 @@ export function CodeBlockTabsTrigger({
       {...props}
       className={({ selected }) =>
         cn(
-          "group/tab relative -mb-px h-11 rounded-t-lg border-b px-4 text-sm transition-colors",
+          "group/tab relative -mb-px h-11 border-b px-4 text-sm transition-colors",
           {
             "border-[#FFC799] text-neutral-50": selected,
             "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
