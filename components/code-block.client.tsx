@@ -39,22 +39,28 @@ export function CodeBlock({
         className
       )}
     >
-      {title ? (
-        <div className="flex h-11 items-center gap-2 border-b border-neutral-800 bg-neutral-900 px-4">
-          {typeof icon === "string" ? (
-            <div
-              className="text-[#99FFE4] [&_svg]:size-4"
-              dangerouslySetInnerHTML={{
-                __html: icon,
-              }}
-            />
-          ) : (
-            icon
-          )}
-          <figcaption className="flex-1 truncate text-sm">{title}</figcaption>
-          <CopyButton containerRef={containerRef} />
-        </div>
-      ) : null}
+      <div className="relative">
+        {title ? (
+          <div className="flex h-11 items-center gap-2 border-b border-neutral-800 bg-neutral-900 px-4">
+            {typeof icon === "string" ? (
+              <div
+                className="text-[#99FFE4] [&_svg]:size-4"
+                dangerouslySetInnerHTML={{
+                  __html: icon,
+                }}
+              />
+            ) : (
+              icon
+            )}
+            <figcaption className="flex-1 truncate text-sm">{title}</figcaption>
+            <CopyButton containerRef={containerRef} />
+          </div>
+        ) : (
+          <div className="absolute top-0 right-0 z-2">
+            <CopyButton containerRef={containerRef} className="size-11" />
+          </div>
+        )}
+      </div>
       <div ref={containerRef}>{children}</div>
     </figure>
   )
@@ -91,9 +97,10 @@ function CopyButton({
     <button
       type="button"
       className={cn(
-        "flex size-4 items-center justify-center transition-colors duration-200 ease-out will-change-transform",
+        "flex size-4 items-center justify-center text-neutral-400 transition-colors duration-200 ease-out will-change-transform hover:text-neutral-50 data-[state=copied]:text-neutral-50",
         className
       )}
+      data-state={state}
       onClick={(e) => {
         startTransition(async () => {
           try {
@@ -182,7 +189,7 @@ export function CodeBlockTabsTrigger({
       {...props}
       className={({ selected }) =>
         cn(
-          "group/tab relative -mb-px h-11 border-b px-4 text-sm transition-colors",
+          "group/tab relative -mb-px h-11 border-b px-3 text-sm transition-colors",
           {
             "border-[#FFC799] text-neutral-50": selected,
             "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
