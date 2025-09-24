@@ -184,9 +184,9 @@ export function CodeBlockTabsTrigger({
       {...props}
       className={({ selected }) =>
         cn(
-          "relative -mb-px h-11 rounded-t-lg border border-b-0 bg-neutral-900 px-5 text-sm",
+          "group/tab relative -mb-px h-11 rounded-t-lg border-b px-4 text-sm transition-colors",
           {
-            "border-neutral-800 text-neutral-50": selected,
+            "border-[#FFC799] text-neutral-50": selected,
             "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
               !selected,
           },
@@ -194,7 +194,8 @@ export function CodeBlockTabsTrigger({
         )
       }
     >
-      {children}
+      <span className="absolute inset-x-1 inset-y-1.5 rounded-md bg-neutral-800 opacity-0 transition-opacity group-hover/tab:opacity-100 group-data-[selected]/tab:opacity-0" />
+      <span className="relative">{children}</span>
     </TabsPrimitive.Tab>
   )
 }
