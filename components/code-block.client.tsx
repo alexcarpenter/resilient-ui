@@ -52,7 +52,9 @@ export function CodeBlock({
             ) : (
               icon
             )}
-            <figcaption className="flex-1 truncate text-sm">{title}</figcaption>
+            <figcaption className="flex-1 truncate text-sm text-neutral-50">
+              {title}
+            </figcaption>
             <CopyButton containerRef={containerRef} />
           </div>
         ) : (
@@ -174,7 +176,15 @@ export function CodeBlockTabsList({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.List>) {
-  return <TabsPrimitive.List {...props} className={cn("px-4", className)} />
+  return (
+    <TabsPrimitive.List
+      {...props}
+      className={cn(
+        "flex overflow-x-auto [mask-image:linear-gradient(to_right,transparent_0%,black_calc(var(--spacing)_*_4),black_calc(100%_-_calc(var(--spacing)_*_4)),_transparent_100%)] px-4 [scrollbar-color:var(--color-neutral-700)_transparent] [scrollbar-width:thin]",
+        className
+      )}
+    />
+  )
 }
 
 /* -----------------------------------------------------------------------------------------------*/
@@ -189,7 +199,7 @@ export function CodeBlockTabsTrigger({
       {...props}
       className={({ selected }) =>
         cn(
-          "group/tab relative -mb-px h-11 border-b px-3 text-sm transition-colors",
+          "group/tab relative h-11 border-b px-1 text-sm transition-colors",
           {
             "border-[#FFC799] text-neutral-50": selected,
             "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
@@ -199,8 +209,9 @@ export function CodeBlockTabsTrigger({
         )
       }
     >
-      <span className="absolute inset-x-1 inset-y-1.5 rounded-md bg-neutral-800 opacity-0 transition-opacity group-hover/tab:opacity-100 group-data-[selected]/tab:opacity-0" />
-      <span className="relative">{children}</span>
+      <span className="rounded-md p-2 transition-colors group-[&:not([data-selected])]/tab:group-hover/tab:bg-neutral-800">
+        {children}
+      </span>
     </TabsPrimitive.Tab>
   )
 }
