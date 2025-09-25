@@ -15,7 +15,7 @@ const buttonVariants = cva(
         peppermint: "bg-vesper-peppermint text-neutral-950",
       },
       size: {
-        default: "h-11 px-4 py-2",
+        default: "h-11 px-4",
         icon: "size-11",
       },
       rounded: {
