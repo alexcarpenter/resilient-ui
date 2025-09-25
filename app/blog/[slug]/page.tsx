@@ -1,33 +1,34 @@
-import { notFound } from "next/navigation";
-import { blogSource } from "@/lib/source";
+import { notFound } from "next/navigation"
+import { blogSource } from "@/lib/source"
+import { mdxComponents } from "@/components/mdx-components"
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }) {
-  const params = await props.params;
-  const page = blogSource.getPage([params.slug]);
+  const params = await props.params
+  const page = blogSource.getPage([params.slug])
 
-  if (!page) notFound();
+  if (!page) notFound()
 
   return {
     title: page.data.title,
     description: page.data.description,
-  };
+  }
 }
 
 export default async function page(props: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }): Promise<React.ReactElement> {
-  const params = await props.params;
-  const page = blogSource.getPage([params.slug]);
+  const params = await props.params
+  const page = blogSource.getPage([params.slug])
 
-  if (!page) notFound();
-  const Mdx = page.data.body;
+  if (!page) notFound()
+  const Mdx = page.data.body
 
   return (
     <>
       <h1>{page.data.title}</h1>
-      <Mdx />
+      <Mdx components={mdxComponents} />
     </>
-  );
+  )
 }

@@ -49,8 +49,8 @@
     overflow-x: auto;
     max-width: 100%;
     background-color: transparent !important;
-    border-radius: var(--radius-md);
     scrollbar-width: thin;
+    scrollbar-color: var(--color-neutral-700) transparent;
 
     code {
       background-color: var(--background);
@@ -62,7 +62,6 @@
       width: fit-content;
       min-width: 100%;
       counter-reset: line;
-      border-radius: var(--radius-md);
 
       & span {
         color: var(--shiki-dark);
@@ -79,7 +78,7 @@
           left: 0;
           z-index: 20;
           display: inline-block;
-          width: 1.5rem;
+          width: calc(var(--spacing) * 4);
           background: linear-gradient(
             to right,
             var(--background) 80%,
@@ -87,14 +86,14 @@
           );
           color: var(--foreground);
           text-align: right;
-          content: "";
+          content: " ";
           user-select: none;
         }
 
         [data-line-numbers="true"] &::before {
           content: counter(line);
-          width: 2.75rem;
-          padding-right: 1rem;
+          width: 2.5rem;
+          padding-right: 0.75rem;
           color: #8b8b8b94;
         }
 
@@ -104,12 +103,8 @@
           right: 0;
           z-index: 10;
           display: inline-block;
-          width: 1.5rem;
-          background: linear-gradient(
-            to left,
-            var(--background) 35%,
-            transparent
-          );
+          width: calc(var(--spacing) * 4);
+          background: linear-gradient(to left, var(--background), transparent);
           content: " ";
           user-select: none;
         }
