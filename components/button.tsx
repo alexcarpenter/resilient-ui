@@ -5,21 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 export const buttonVariants = cva(
-  "group/button relative isolate inline-flex items-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors bg-[var(--bg-color)] text-[var(--text-color)]",
+  "group/button relative isolate inline-flex items-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors bg-[var(--bg-color)] text-[var(--fg-color)]",
   {
     variants: {
       variant: {
         default:
-          "[--text-color:var(--color-neutral-50)] [--bg-color:var(--color-neutral-800)]",
+          "[--fg-color:var(--color-neutral-50)] [--bg-color:var(--color-neutral-800)]",
         secondary:
-          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-neutral-200)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-neutral-200)]",
         orange:
-          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-orange)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-orange)]",
         peppermint:
-          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)]",
       },
       disabled: {
-        true: "bg-[color-mix(in_oklab,var(--bg-color)_80%,var(--color-background))] text-[color-mix(in_oklab,var(--text-color)_50%,var(--color-background))]",
+        true: "bg-[color-mix(in_oklab,var(--bg-color)_50%,var(--color-background))] text-[color-mix(in_oklab,var(--fg-color)_50%,var(--color-background))]",
         false: "hover:bg-[color-mix(in_oklab,var(--bg-color)_95%,black)]",
       },
       size: {
