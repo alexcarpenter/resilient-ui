@@ -5,14 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4",
+  "inline-flex items-center justify-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors",
   {
     variants: {
       variant: {
-        default: "bg-neutral-800 text-neutral-50",
-        secondary: "bg-neutral-50 text-neutral-950",
-        orange: "bg-vesper-orange text-neutral-950",
-        peppermint: "bg-vesper-peppermint text-neutral-950",
+        default:
+          "bg-neutral-800 text-neutral-50 hover:bg-[color-mix(in_oklab,var(--color-neutral-800)_95%,black)]",
+        secondary:
+          "bg-neutral-50 text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-neutral-50)_95%,black)]",
+        orange:
+          "bg-vesper-orange text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-vesper-orange)_95%,black)]",
+        peppermint:
+          "bg-vesper-peppermint text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-vesper-peppermint)_95%,black)]",
       },
       size: {
         default: "h-11 px-4",
