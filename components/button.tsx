@@ -4,23 +4,31 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors",
+export const buttonVariants = cva(
+  "group/button relative isolate inline-flex items-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors bg-[var(--bg-color)] text-[var(--text-color)]",
   {
     variants: {
       variant: {
         default:
-          "bg-neutral-800 text-neutral-50 hover:bg-[color-mix(in_oklab,var(--color-neutral-800)_95%,black)]",
+          "[--text-color:var(--color-neutral-50)] [--bg-color:var(--color-neutral-800)]",
         secondary:
-          "bg-neutral-50 text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-neutral-50)_95%,black)]",
+          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-neutral-200)]",
         orange:
-          "bg-vesper-orange text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-vesper-orange)_95%,black)]",
+          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-orange)]",
         peppermint:
-          "bg-vesper-peppermint text-neutral-950 hover:bg-[color-mix(in_oklab,var(--color-vesper-peppermint)_95%,black)]",
+          "[--text-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)]",
+      },
+      disabled: {
+        true: "bg-[color-mix(in_oklab,var(--bg-color)_80%,var(--color-background))] text-[color-mix(in_oklab,var(--text-color)_50%,var(--color-background))]",
+        false: "hover:bg-[color-mix(in_oklab,var(--bg-color)_95%,black)]",
       },
       size: {
         default: "h-11 px-4",
         icon: "size-11",
+      },
+      justify: {
+        default: "justify-center",
+        between: "justify-between",
       },
       rounded: {
         default: "rounded-md",
@@ -30,13 +38,15 @@ const buttonVariants = cva(
     defaultVariants: {
       variant: "default",
       size: "default",
+      justify: "default",
       rounded: "default",
+      disabled: false,
     },
   }
 )
 
 interface ButtonProps
-  extends VariantProps<typeof buttonVariants>,
+  extends Omit<VariantProps<typeof buttonVariants>, "disabled">,
     useRender.ComponentProps<"button"> {}
 
 export function Button({
@@ -44,11 +54,16 @@ export function Button({
   variant,
   size,
   className,
+  justify,
   rounded,
+  disabled,
   ...props
 }: ButtonProps) {
   const defaultProps: useRender.ElementProps<"button"> = {
-    className: cn(buttonVariants({ variant, size, rounded, className })),
+    className: cn(
+      buttonVariants({ variant, size, rounded, justify, disabled, className })
+    ),
+    disabled,
   }
 
   const element = useRender({
