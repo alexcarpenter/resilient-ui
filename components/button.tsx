@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 export const buttonVariants = cva(
-  "group/button relative isolate inline-flex items-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors bg-[var(--bg-color)] text-[var(--fg-color)]",
+  "group/button relative isolate inline-flex items-center gap-x-2 text-sm [font-weight:425] [&_svg]:size-4 transition-colors bg-[var(--bg-color)] text-[var(--fg-color)] outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2",
   {
     variants: {
       variant: {
@@ -20,7 +20,8 @@ export const buttonVariants = cva(
       },
       disabled: {
         true: "bg-[color-mix(in_oklab,var(--bg-color)_50%,var(--color-background))] text-[color-mix(in_oklab,var(--fg-color)_50%,var(--color-background))]",
-        false: "hover:bg-[color-mix(in_oklab,var(--bg-color)_95%,black)]",
+        false:
+          "hover:bg-[color-mix(in_oklab,var(--bg-color)_80%,var(--color-background))]",
       },
       size: {
         default: "h-11 px-4",
