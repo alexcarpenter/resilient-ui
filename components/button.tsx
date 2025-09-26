@@ -10,18 +10,18 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "[--fg-color:var(--color-neutral-50)] [--bg-color:var(--color-neutral-800)]",
+          "[--fg-color:var(--color-neutral-50)] [--bg-color:var(--color-neutral-800)] [--color-mix:var(--color-white)]",
         secondary:
-          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-neutral-200)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-neutral-200)] [--color-mix:var(--color-black)]",
         orange:
-          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-orange)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-orange)] [--color-mix:var(--color-black)]",
         peppermint:
-          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)]",
+          "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)] [--color-mix:var(--color-black)]",
       },
       disabled: {
         true: "bg-[color-mix(in_oklab,var(--bg-color)_50%,var(--color-background))] text-[color-mix(in_oklab,var(--fg-color)_50%,var(--color-background))]",
         false:
-          "hover:bg-[color-mix(in_oklab,var(--bg-color)_80%,var(--color-background))]",
+          "hover:bg-[color-mix(in_oklab,var(--bg-color)_90%,var(--color-mix))]",
       },
       size: {
         default: "h-11 px-4",
