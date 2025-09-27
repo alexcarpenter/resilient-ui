@@ -19,7 +19,7 @@ export const buttonVariants = cva(
           "[--fg-color:var(--color-neutral-950)] [--bg-color:var(--color-vesper-peppermint)] [--color-mix:var(--color-black)]",
       },
       disabled: {
-        true: "bg-[color-mix(in_oklab,var(--bg-color)_50%,var(--color-background))] text-[color-mix(in_oklab,var(--fg-color)_50%,var(--color-background))]",
+        true: "bg-[color-mix(in_srgb,var(--bg-color)_50%,var(--color-background))] text-[color-mix(in_srgb,var(--fg-color)_50%,var(--color-background))]",
         false:
           "hover:bg-[color-mix(in_oklab,var(--bg-color)_90%,var(--color-mix))]",
       },
