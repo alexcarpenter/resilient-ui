@@ -7,6 +7,8 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-vesper-peppermint: #99ffe4;
+  --color-vesper-orange: #ffc799;
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --text-xs: 0.625rem;
