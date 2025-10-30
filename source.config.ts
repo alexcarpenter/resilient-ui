@@ -43,7 +43,16 @@ export const interviews = defineCollections({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    avatar: z.string(),
     published: z.string().date().or(z.date()),
+    social: z
+      .object({
+        website: z.string().optional(),
+        github: z.string().optional(),
+        twitter: z.string().optional(),
+        bluesky: z.string().optional(),
+      })
+      .optional(),
   }),
 })
 

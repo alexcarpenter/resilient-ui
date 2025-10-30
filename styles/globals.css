@@ -7,6 +7,8 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-vesper-peppermint: #99ffe4;
+  --color-vesper-orange: #ffc799;
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --text-xs: 0.625rem;
@@ -109,6 +111,28 @@
           user-select: none;
         }
       }
+    }
+  }
+
+  .prose {
+    & > :where(* + *) {
+      margin-top: calc(var(--spacing) * 4);
+    }
+
+    & > :where(* + *) {
+      margin-top: calc(var(--spacing) * 4);
+    }
+
+    & > :where(* + h2) {
+      margin-top: calc(var(--spacing) * 16);
+    }
+
+    & :where(h2) {
+      font-weight: 600;
+    }
+
+    & :where(p) {
+      color: var(--color-muted-foreground);
     }
   }
 }
