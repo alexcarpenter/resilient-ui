@@ -37,6 +37,16 @@ export const changelog = defineCollections({
   }),
 })
 
+export const interviews = defineCollections({
+  type: "doc",
+  dir: "./content/interviews",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    published: z.string().date().or(z.date()),
+  }),
+})
+
 export default defineConfig({
   mdxOptions: {
     rehypeCodeOptions: {
