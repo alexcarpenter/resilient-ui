@@ -34,8 +34,9 @@ export default async function page(props: {
             src={page.data.avatar}
             width="84"
             height="84"
-            alt=""
+            alt={`${page.data.title} avatar`}
             className="absolute size-full object-cover mix-blend-multiply"
+            priority
           />
         </div>
         <h1
