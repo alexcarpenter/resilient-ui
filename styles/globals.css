@@ -135,6 +135,13 @@
     & :where(p) {
       color: var(--color-muted-foreground);
     }
+
+    & :where(hr) {
+      margin-top: calc(var(--spacing) * 16);
+      border: none;
+      height: 1px;
+      background-color: var(--color-muted);
+    }
   }
 }
 
