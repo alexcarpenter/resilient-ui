@@ -129,6 +129,7 @@
 
     & :where(h2) {
       font-weight: 600;
+      text-wrap: pretty;
     }
 
     & :where(p) {
