@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { interviewsSource } from "@/lib/source"
 import { mdxComponents } from "@/components/mdx-components"
 import Image from "next/image"
+import Link from "next/link"
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
@@ -29,7 +30,18 @@ export default async function page(props: {
   return (
     <>
       <header className="flex flex-col items-center px-4 py-32 text-center">
-        <div className="bg-vesper-orange relative size-24 overflow-hidden rounded-sm">
+        <h1
+          className="uppercase"
+          style={{
+            fontStretch: "200%",
+            fontWeight: "900",
+          }}
+        >
+          <Link href="/" className="hover:text-vesper-orange transition-colors">
+            Resilient&mdash;UI
+          </Link>
+        </h1>
+        <div className="bg-vesper-orange relative mt-8 size-24 overflow-hidden rounded-sm">
           <Image
             src={page.data.avatar}
             width="84"
@@ -58,11 +70,15 @@ export default async function page(props: {
         </h1>
         {page.data.social ? (
           <ul className="mt-8 flex gap-x-4 font-mono text-xs uppercase">
-            {Object.entries(page.data.social).map(([key, value]) => {
+            {Object.entries(page.data.social).map(([label, value]) => {
               return (
-                <li>
-                  <a href={value} target="_blank" className="text-[#FFC799]">
-                    {key}
+                <li key={label}>
+                  <a
+                    href={value}
+                    target="_blank"
+                    className="text-vesper-orange"
+                  >
+                    {label}
                   </a>
                 </li>
               )
