@@ -132,7 +132,7 @@
     }
 
     & :where(h2) {
-      font-weight: 600;
+      font-weight: 500;
       text-wrap: pretty;
     }
 

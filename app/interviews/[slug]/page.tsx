@@ -3,6 +3,7 @@ import { interviewsSource } from "@/lib/source"
 import { mdxComponents } from "@/components/mdx-components"
 import Image from "next/image"
 import Link from "next/link"
+import { CornerDownRight } from "lucide-react"
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
@@ -33,7 +34,7 @@ export default async function page(props: {
         <h1
           className="uppercase"
           style={{
-            fontStretch: "200%",
+            fontStretch: "ultra-expanded",
             fontWeight: "900",
           }}
         >

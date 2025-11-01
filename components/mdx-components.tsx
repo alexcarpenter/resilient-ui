@@ -7,6 +7,7 @@ import {
   CodeBlockTabsTrigger,
   CodeBlockTab,
 } from "./code-block.client"
+import { QuestionAnswer, QuestionAnswerItem } from "./question-answer"
 
 export const mdxComponents = {
   CodeBlockTabs,
@@ -18,4 +19,6 @@ export const mdxComponents = {
       <Pre>{props.children}</Pre>
     </CodeBlock>
   ),
+  QuestionAnswer,
+  QuestionAnswerItem,
 }
