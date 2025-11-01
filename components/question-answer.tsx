@@ -10,10 +10,10 @@ export function QuestionAnswer({
   return (
     <div className="border-muted my-16 flex flex-row-reverse items-start gap-x-8 border-y py-16">
       <h2
-        className="text-vesper-orange text-3xl uppercase [writing-mode:vertical-lr]"
+        className="text-muted text-3xl uppercase [writing-mode:vertical-lr]"
         style={{
           fontStretch: "200%",
-          fontWeight: 100,
+          fontWeight: 900,
         }}
       >
         {title}

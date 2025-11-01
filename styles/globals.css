@@ -148,6 +148,10 @@
       color: var(--color-muted-foreground);
     }
 
+    & :where(a) {
+      color: var(--color-vesper-orange);
+    }
+
     & :where(hr) {
       margin-top: calc(var(--spacing) * 16);
       border: none;
