@@ -150,6 +150,7 @@
 
     & :where(a) {
       color: var(--color-vesper-orange);
+      text-decoration: underline;
     }
 
     & :where(hr) {

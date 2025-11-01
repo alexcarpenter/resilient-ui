@@ -8,9 +8,9 @@ export function QuestionAnswer({
   children: React.ReactNode
 }) {
   return (
-    <div className="border-muted my-16 flex flex-row-reverse items-start gap-x-8 border-y py-16">
+    <div className="border-muted my-16 border-y py-16">
       <h2
-        className="text-muted text-3xl uppercase [writing-mode:vertical-lr]"
+        className="text-muted float-right mb-8 ml-8 inline text-3xl uppercase [writing-mode:vertical-lr]"
         style={{
           fontStretch: "200%",
           fontWeight: 900,
@@ -18,7 +18,7 @@ export function QuestionAnswer({
       >
         {title}
       </h2>
-      <div className="flex flex-col gap-y-8">{children}</div>
+      {children}
     </div>
   )
 }
@@ -31,12 +31,12 @@ export function QuestionAnswerItem({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      <h3 className="font-medium">{title}</h3>
-      <div className="mt-2 flex gap-x-2">
-        <CornerDownRight className="text-muted-foreground flex h-lh w-4 flex-none items-center" />
-        {children}
+    <>
+      <h3 className="font-medium not-first-of-type:mt-8">{title}</h3>
+      <div className="text-muted-foreground mt-2 flex gap-x-2">
+        <CornerDownRight className="flex h-lh w-4 flex-none items-center" />
+        <div className="prose">{children}</div>
       </div>
-    </div>
+    </>
   )
 }
