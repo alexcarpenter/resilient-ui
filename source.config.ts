@@ -6,6 +6,7 @@ import {
   metaSchema,
 } from "fumadocs-mdx/config"
 import { z } from "zod"
+import { rehypeQuestionAnswer } from "./lib/rehype-question-answer"
 // import type { ElementContent } from "hast"
 
 export const docs = defineDocs({
@@ -58,6 +59,7 @@ export const interviews = defineCollections({
 
 export default defineConfig({
   mdxOptions: {
+    rehypePlugins: [rehypeQuestionAnswer],
     rehypeCodeOptions: {
       themes: {
         light: "vesper",

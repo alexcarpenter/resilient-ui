@@ -63,6 +63,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.1.16
         version: 4.1.16
+      '@types/hast':
+        specifier: ^3.0.4
+        version: 3.0.4
       '@types/mdx':
         specifier: 2.0.13
         version: 2.0.13
@@ -81,6 +84,9 @@ importers:
       eslint-config-next:
         specifier: 15.5.2
         version: 15.5.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)
+      mdast-util-mdx-jsx:
+        specifier: ^3.2.0
+        version: 3.2.0
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
