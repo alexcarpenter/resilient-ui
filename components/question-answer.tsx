@@ -8,9 +8,9 @@ export function QuestionAnswer({
   children: React.ReactNode
 }) {
   return (
-    <div className="border-muted my-16 border-y py-16">
+    <div className="border-muted my-16 flex items-start gap-x-4 border-y py-16 md:gap-x-8">
       <h2
-        className="text-muted float-right mb-8 ml-8 inline text-3xl uppercase [writing-mode:vertical-lr]"
+        className="text-muted rotate-180 text-xl leading-none uppercase [writing-mode:vertical-lr] md:text-3xl"
         style={{
           fontStretch: "200%",
           fontWeight: 900,
@@ -18,7 +18,7 @@ export function QuestionAnswer({
       >
         {title}
       </h2>
-      {children}
+      <div>{children}</div>
     </div>
   )
 }
