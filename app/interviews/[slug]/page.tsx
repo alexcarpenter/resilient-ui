@@ -77,7 +77,7 @@ export default async function page(props: {
                   <a
                     href={value}
                     target="_blank"
-                    className="text-vesper-orange"
+                    className="text-vesper-orange hover:underline"
                   >
                     {label}
                   </a>
