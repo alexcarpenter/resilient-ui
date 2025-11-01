@@ -8,9 +8,9 @@ export function QuestionAnswer({
   children: React.ReactNode
 }) {
   return (
-    <div className="border-muted my-16 flex items-start gap-x-4 border-y py-16 md:gap-x-8">
+    <div className="border-muted my-16 flex items-start gap-x-8 border-y py-16">
       <h2
-        className="text-vesper-peppermint rotate-180 text-xl leading-none uppercase [writing-mode:vertical-lr] md:text-3xl"
+        className="text-muted rotate-180 text-xl leading-none uppercase [writing-mode:vertical-lr] md:text-3xl"
         style={{
           fontStretch: "200%",
           fontWeight: 900,
