@@ -153,6 +153,10 @@
       list-style-type: disc;
       padding-left: calc(var(--spacing) * 6);
       color: var(--color-muted-foreground);
+
+      ::marker {
+        color: var(--color-foreground);
+      }
     }
 
     & :where(hr) {

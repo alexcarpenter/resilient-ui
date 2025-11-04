@@ -32,6 +32,10 @@ The second idea that goes hand in hand with this is keeping the API surface as s
 
 My approach is to start by writing a snippet of how the library or component should be used in the product. I think about the ideal API, prop names that feel natural, and how to keep the number of arguments to a minimum.
 
+<PullQuote>
+I start by writing a snippet of how the library or component should be used in the product… then I start ‘making it worse’ by introducing real-world limitations and requirements.
+</PullQuote>
+
 Once I’m happy with that, I start “making it worse” by introducing real-world limitations and requirements. Which props do I actually need to make the component accessible in all cases? Which internal parts are too expensive to automate? In the end, this process usually leads me to a sweet spot — a balance between requirements and the best possible developer experience, often forcing me to think creatively to get there.
 
 <QuestionAnswer title="Quick five">
@@ -69,6 +73,10 @@ I believe design systems should instead provide more low-level utilities, not ju
 ## Having built UI at massive scale for companies like Booking.com and Shopify, what are the key principles or practices that help ensure resilience and performance across such large user bases?
 
 Composition is your friend. At scale, you might think you’ve covered every possible use case for a component but trust me, you haven’t. Even if your components can build the whole product today, that won’t be true a year from now. Give people an easy way to combine smaller pieces of the UI instead of building huge, all-in-one components for them. Spend your time making sure those smaller bits work well together out of the box.
+
+<PullQuote>
+At scale, you might think you’ve covered every possible use case for a component but trust me, you haven’t… Give people an easy way to combine smaller pieces of the UI instead of building huge, all-in-one components.
+</PullQuote>
 
 Another area where smaller composable pieces shine is documentation. Let’s be honest — most people don’t like reading docs. Composition lets you focus more on examples rather than documenting hundreds of props. Visual examples make it easier for people to get started, and they can adjust them however they need.
 
