@@ -149,6 +149,12 @@
       text-decoration: underline;
     }
 
+    & :where(ul) {
+      list-style-type: disc;
+      padding-left: calc(var(--spacing) * 6);
+      color: var(--color-muted-foreground);
+    }
+
     & :where(hr) {
       margin-top: calc(var(--spacing) * 16);
       border: none;
