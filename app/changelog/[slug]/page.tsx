@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation"
 import { changelogSource } from "@/lib/source"
-import { SocialShare } from "@/components/social-share"
 import { siteConfig } from "@/lib/config"
 
 export async function generateMetadata(props: {
@@ -26,16 +25,9 @@ export default async function Page(props: {
   if (!page) notFound()
   const Mdx = page.data.body
 
-  const pageUrl = `${siteConfig.url}/changelog/${params.slug}`
-
   return (
     <>
       <h1>{page.data.title}</h1>
-      <SocialShare
-        title={page.data.title}
-        description={page.data.description}
-        url={pageUrl}
-      />
       <Mdx />
     </>
   )
