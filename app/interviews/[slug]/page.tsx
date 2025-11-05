@@ -107,6 +107,29 @@ export default async function page(props: {
         <div className="prose mx-auto max-w-prose">
           <Mdx components={getMdxComponents({ pageUrl })} />
         </div>
+        {page.data.social ? (
+          <footer className="mx-auto mt-16 flex max-w-prose flex-col items-center gap-8 sm:flex-row">
+            <h2 className="text-foreground font-mono text-xs uppercase">
+              Follow {page.data.title.split(" ").at(0)}
+            </h2>
+            <span className="bg-muted hidden h-px flex-1 sm:flex"></span>
+            <ul className="flex items-start gap-x-4 text-xs">
+              {Object.entries(page.data.social).map(([label, value]) => {
+                return (
+                  <li key={label}>
+                    <a
+                      href={value}
+                      target="_blank"
+                      className="text-vesper-orange font-mono text-xs uppercase hover:underline"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </footer>
+        ) : null}
       </div>
     </>
   )
