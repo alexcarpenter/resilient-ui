@@ -3,7 +3,6 @@ import { interviewsSource } from "@/lib/source"
 import { getMdxComponents } from "@/components/mdx-components"
 import Image from "next/image"
 import Link from "next/link"
-import { CornerDownRight } from "lucide-react"
 import { siteConfig } from "@/lib/config"
 
 export async function generateMetadata(props: {
@@ -14,9 +13,22 @@ export async function generateMetadata(props: {
 
   if (!page) notFound()
 
+  const ogImage = `/og/${params.slug}.jpg`
+
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImage],
+    },
   }
 }
 
@@ -27,6 +39,7 @@ export default async function page(props: {
   const page = interviewsSource.getPage([params.slug])
 
   if (!page) notFound()
+
   const Mdx = page.data.body
 
   const pageUrl = `${siteConfig.url}/interviews/${params.slug}`
