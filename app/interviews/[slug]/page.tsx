@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation"
 import { interviewsSource } from "@/lib/source"
-import { mdxComponents } from "@/components/mdx-components"
+import { getMdxComponents } from "@/components/mdx-components"
 import Image from "next/image"
 import Link from "next/link"
 import { CornerDownRight } from "lucide-react"
+import { siteConfig } from "@/lib/config"
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
@@ -27,6 +28,8 @@ export default async function page(props: {
 
   if (!page) notFound()
   const Mdx = page.data.body
+
+  const pageUrl = `${siteConfig.url}/interviews/${params.slug}`
 
   return (
     <>
@@ -89,7 +92,7 @@ export default async function page(props: {
       </header>
       <div className="px-4 pb-32">
         <div className="prose mx-auto max-w-prose">
-          <Mdx components={mdxComponents} />
+          <Mdx components={getMdxComponents({ pageUrl })} />
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { blogSource } from "@/lib/source"
-import { mdxComponents } from "@/components/mdx-components"
+import { getMdxComponents } from "@/components/mdx-components"
+import { siteConfig } from "@/lib/config"
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
@@ -25,10 +26,12 @@ export default async function page(props: {
   if (!page) notFound()
   const Mdx = page.data.body
 
+  const pageUrl = `${siteConfig.url}/blog/${params.slug}`
+
   return (
     <>
       <h1>{page.data.title}</h1>
-      <Mdx components={mdxComponents} />
+      <Mdx components={getMdxComponents({ pageUrl })} />
     </>
   )
 }
