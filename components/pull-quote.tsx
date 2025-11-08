@@ -1,14 +1,28 @@
+"use client"
+import * as React from "react"
 import { siteConfig } from "@/lib/config"
+import { useScroll, useTransform, motion, MotionValue } from "motion/react"
 
 export function PullQuote({ content, url }: { content: string; url?: string }) {
+  const scrollRef = React.useRef(null)
+  const words = content.split(" ")
+
   const shareUrl = url || siteConfig.url
 
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(content)}&url=${encodeURIComponent(shareUrl)}`
   const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${content} ${shareUrl}`)}`
   const linkedinUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(content)}`
 
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start 0.85", "start 0.25"],
+  })
+
   return (
-    <aside className="border-muted my-16 flex items-start gap-x-8 border-y py-16">
+    <aside
+      ref={scrollRef}
+      className="border-muted my-16 flex items-start gap-x-8 border-y py-16"
+    >
       <h2
         className="text-muted mt-1 rotate-180 text-xl leading-none uppercase [writing-mode:vertical-lr] md:text-3xl"
         style={{
@@ -20,13 +34,24 @@ export function PullQuote({ content, url }: { content: string; url?: string }) {
       </h2>
       <div>
         <div
-          className="*:text-vesper-orange text-xl md:text-3xl"
+          className="text-xl md:text-3xl"
           style={{
             fontStretch: "200%",
             fontWeight: 100,
           }}
         >
-          <p>{content}</p>
+          <p className="sr-only">{content}</p>
+          <p className="text-vesper-orange" aria-hidden>
+            {words.map((word, i) => {
+              const start = i / words.length
+              const end = start + 1 / words.length
+              return (
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              )
+            })}
+          </p>
         </div>
         <p className="text-muted-foreground mt-8 flex items-center gap-x-4 font-mono text-xs uppercase">
           Share on{" "}
@@ -75,5 +100,53 @@ export function PullQuote({ content, url }: { content: string; url?: string }) {
         </p>
       </div>
     </aside>
+  )
+}
+
+const Word = ({
+  children,
+  progress,
+  range,
+}: {
+  children: string
+  progress: MotionValue<number>
+  range: [number, number]
+}) => {
+  const amount = range[1] - range[0]
+  const step = amount / children.length
+  const characters = children.split("")
+
+  return (
+    <span className="relative inline">
+      {characters.map((character, i) => {
+        const start = range[0] + i * step
+        const end = range[0] + (i + 1) * step
+        return (
+          <Character key={i} progress={progress} range={[start, end]}>
+            {character}
+          </Character>
+        )
+      })}{" "}
+    </span>
+  )
+}
+
+const Character = ({
+  children,
+  progress,
+  range,
+}: {
+  children: string
+  progress: MotionValue<number>
+  range: [number, number]
+}) => {
+  const opacity = useTransform(progress, range, [0, 1])
+  return (
+    <span className="relative inline">
+      <span className="text-muted">{children}</span>
+      <motion.span className="absolute inset-0" style={{ opacity }}>
+        {children}
+      </motion.span>
+    </span>
   )
 }
