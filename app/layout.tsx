@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/lib/config"
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           <div className="background-grid h-3" />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
