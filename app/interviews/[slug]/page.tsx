@@ -58,7 +58,7 @@ export default async function page(props: {
             Resilient&mdash;UI
           </Link>
         </h1>
-        <div className="bg-vesper-orange relative mt-8 size-24 overflow-hidden rounded-sm">
+        <div className="bg-vesper-orange outline-muted relative mt-8 size-24 overflow-hidden rounded-sm outline-4">
           <Image
             src={page.data.avatar}
             width="84"

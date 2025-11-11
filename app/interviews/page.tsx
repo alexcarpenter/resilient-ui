@@ -8,14 +8,22 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const posts = interviewsSource.getPages()
+  const posts = interviewsSource
+    .getPages()
+    .sort(
+      (a, b) =>
+        (b.data.published ? new Date(b.data.published).getTime() : 0) -
+        (a.data.published ? new Date(a.data.published).getTime() : 0)
+    )
 
   return (
     <ul>
       {posts.map((post) => (
-        <Link key={post.url} href={post.url}>
-          {post.data.title}
-        </Link>
+        <li key={post.url}>
+          <h2>
+            <Link href={post.url}>{post.data.title}</Link>
+          </h2>
+        </li>
       ))}
     </ul>
   )
