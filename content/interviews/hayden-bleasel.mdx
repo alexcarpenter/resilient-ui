@@ -35,7 +35,7 @@ I've been building shadcn/ui components for a while now. The ecosystem is growin
 
 Growth like that inevitably leads to fragmentation and varying ways of doing things, not so much with the components themselves, but with the documentation and the community. To help remedy this, we wanted to create a formal specification for building components that could be used by anyone, for any library, not just shadcn/ui on React.
 
-The goal is to help developers build components that are more consistent, more accessible, and more performant. Conceptually we wanted it to be like Anthropic's [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro), but for building components on the modern web. 
+The goal is to help developers build components that are more consistent, more accessible, and more performant. Conceptually we wanted it to be like Anthropic's [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro), but for building components on the modern web.
 
 <QuestionAnswer title="Quick five">
   ### What’s your most-played song or artist on Spotify right now?
@@ -65,6 +65,8 @@ One of the reasons I wanted to create this spec is I've seen developers create "
 
 This is a problem because it's not just about the UI, it's about the entire experience. The core shadcn/ui components are great because of their copy-and-paste distribution and simple design, but most importantly it's because they're built on top of [Radix's composable primitives](https://www.radix-ui.com/primitives).
 
+<PullQuote content="Great composability is an art. It's like building an engine that you can take apart, modify and put back together again and it still works."  />
+
 Great composability is an art. It's like building an engine that you can take apart, modify and put back together again and it still works. I did a lot of this research when building Kibo UI ([recently acq'd](https://x.com/haydenbleasel/status/1983580107127320643)) and even more in AI Elements.
 
 ## What's your philosophy on when to build a new component versus when to provide composition utilities that let developers build it themselves?
@@ -78,6 +80,8 @@ Primitives mean more specific code to maintain, but it usually results in a bett
 One of the things I've learned working on AI Elements is to take the current patterns of models with a grain of salt. Until recently, we all saw pre-response reasoning as the defacto solution for thinking models, now we're seeing chain-of-thought style thinking patterns emerge where there's multiple steps to the reasoning process.
 
 I don't think it's important to build robust components that stand the test of time, but to adapt quickly and keep up with the latest patterns. For example, our PromptInput component historically had a simple ModelSelector dropdown built in, but the advent of [AI Gateway](https://vercel.com/ai-gateway) meant we needed a more flexible solution for way more data. So, we split this out into a new component called ModelSelector that can do this.
+
+<PullQuote content="I don't think it's important to build robust components that stand the test of time, but to adapt quickly and keep up with the latest patterns."  />
 
 Just do your best to create a neat abstraction and keep it flexible enough to adapt to the latest patterns.
 

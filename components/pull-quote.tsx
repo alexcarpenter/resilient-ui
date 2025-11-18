@@ -1,6 +1,4 @@
-import * as React from "react"
 import { siteConfig } from "@/lib/config"
-import { useScroll, useTransform, motion, MotionValue } from "motion/react"
 import { TextReveal } from "./text-reveal"
 
 export function PullQuote({ content, url }: { content: string; url?: string }) {
@@ -77,53 +75,5 @@ export function PullQuote({ content, url }: { content: string; url?: string }) {
         </p>
       </div>
     </aside>
-  )
-}
-
-const Word = ({
-  children,
-  progress,
-  range,
-}: {
-  children: string
-  progress: MotionValue<number>
-  range: [number, number]
-}) => {
-  const amount = range[1] - range[0]
-  const step = amount / children.length
-  const characters = children.split("")
-
-  return (
-    <span className="relative inline">
-      {characters.map((character, i) => {
-        const start = range[0] + i * step
-        const end = range[0] + (i + 1) * step
-        return (
-          <Character key={i} progress={progress} range={[start, end]}>
-            {character}
-          </Character>
-        )
-      })}{" "}
-    </span>
-  )
-}
-
-const Character = ({
-  children,
-  progress,
-  range,
-}: {
-  children: string
-  progress: MotionValue<number>
-  range: [number, number]
-}) => {
-  const opacity = useTransform(progress, range, [0, 1])
-  return (
-    <span className="relative inline">
-      <span className="text-muted">{children}</span>
-      <motion.span className="absolute inset-0" style={{ opacity }}>
-        {children}
-      </motion.span>
-    </span>
   )
 }
