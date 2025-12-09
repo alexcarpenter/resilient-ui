@@ -1,0 +1,108 @@
+---
+title: Hayden Bleasel
+description: Australian Design Engineer who loves working on open source software for the web.
+avatar: /img/hayden-bleasel.jpg
+published: 2025-11-11
+social:
+  website: https://haydenbleasel.com
+  github: https://github.com/haydenbleasel
+  twitter: https://x.com/haydenbleasel
+---
+
+## To start off, could you tell us a bit about yourself and how you first got started in this field?
+
+Sure thing - I'm Hayden, I'm currently a Developer Experience (DX) Engineer at [Vercel](https://vercel.com) where I work primarily on open source software for the web, like [AI Elements](https://ai-sdk.dev/elements) and [Streamdown](https://streamdown.ai).
+
+Like most folks who find themselves doing DX, I have a very non-traditional entry into the field. I started my career as a Front-End Engineer, eventually became a Full-Stack and loved building products. But, they all looked terrible so I started to learn design and eventually found myself doing design full-time.
+
+I spent some time knocking around as a Product Designer x Front-End Engineer (what we call Design Engineers nowadays) and then ran my own agency for a few years. Then I abstracted even further into Product Management and became the CPO of a startup.
+
+Now, I'm back to mixing it up between design, product and engineering, but trying to do it at a much larger scale.
+
+## You've described yourself as both a designer and engineer. How do you navigate that intersection, and do you find yourself leaning more toward one side depending on the project?
+
+I think that intersection is more common nowadays, especially as we see more and more companies hiring for Design Engineers. I grew up in a world (Australia, basically another planet) where they were seen as two distinct roles, but my internship at [Palantir](https://www.palantir.com) when I was younger helped me realize that realistically they're two sides of the same coin.
+
+The desire to create beautiful software is what drives great designers and engineers, the only difference is the tools they use to do it. Historically these tools were walled gardens, but now with AI products like [Cursor](https://cursor.com), [Claude](https://claude.ai) and (shill incoming) [v0](https://v0.app), the lines are blurring. Engineers now have help improving their UI and designers now have assistants to help them implement their ideas.
+
+For me, they're the same thing - they're a symphony of sorts. There's the design of the UI and the code that implements it, but also the design of the code itself (how it's structured, how it's documented, how it's tested, etc.).
+
+This is the only way it makes sense to the end user - they don't see the design or the code, they see the product.
+
+## You recently co-authored [components.build](https://components.build) with shadcn — a formal specification for building modern UI components. What are the goals of the project, and what do you hope people take from it?
+
+I've been building shadcn/ui components for a while now. The ecosystem is growing faster than anyone expected (repo just hit 1M stars) and it's becoming the foundation not just for new projects, but for new business models that are built on top of it.
+
+Growth like that inevitably leads to fragmentation and varying ways of doing things, not so much with the components themselves, but with the documentation and the community. To help remedy this, we wanted to create a formal specification for building components that could be used by anyone, for any library, not just shadcn/ui on React.
+
+The goal is to help developers build components that are more consistent, more accessible, and more performant. Conceptually we wanted it to be like Anthropic's [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro), but for building components on the modern web.
+
+<QuestionAnswer title="Quick five">
+  ### What’s your most-played song or artist on Spotify right now?
+
+  Probably [Hell Of A Night](https://open.spotify.com/track/6MKq4tkdKCwixFocjVvaC8?si=a08fff23c5a34865) by LA WOMEN but tbh I usually just find myself opening [gta.fm](https://gta.fm/) lol
+
+  ### What’s your go-to drink or snack when you’re deep in design or coding mode?
+
+  Celcius, no debate.
+
+  ### If you weren’t doing what you do now, what kind of job could you see yourself in?
+
+  Running a startup... 👀
+
+  ### Is there an app, tool, or website you’re obsessed with lately — design-related or not?
+
+  I just got a Peloton Bike+, that's been really great. Design-wise, I love [Claude Code](https://www.claude.com/product/claude-code). TUI apps are my jam.
+
+  ### When you actually manage to unplug, how do you like to spend your downtime?
+
+  Playing video games and hanging with the crew.
+</QuestionAnswer>
+
+## In the components.build spec, what principles do you consider most critical but often overlooked by component library authors?
+
+One of the reasons I wanted to create this spec is I've seen developers create "shadcn/ui" components that use the colors and classnames, but they're not composable or accessible - they're just a big, single component that you can't modify without tearing it apart and rebuilding it.
+
+This is a problem because it's not just about the UI, it's about the entire experience. The core shadcn/ui components are great because of their copy-and-paste distribution and simple design, but most importantly it's because they're built on top of [Radix's composable primitives](https://www.radix-ui.com/primitives).
+
+<PullQuote content="Great composability is an art. It's like building an engine that you can take apart, modify and put back together again and it still works."  />
+
+Great composability is an art. It's like building an engine that you can take apart, modify and put back together again and it still works. I did a lot of this research when building Kibo UI ([recently acq'd](https://x.com/haydenbleasel/status/1983580107127320643)) and even more in AI Elements.
+
+## What's your philosophy on when to build a new component versus when to provide composition utilities that let developers build it themselves?
+
+This is a question I struggle with every time I think about building a new component. Does it make more sense as a new primitive, or a block of shadcn/ui primitives? All I can say is that it's a judgement call and it's important to consider the trade-offs.
+
+Primitives mean more specific code to maintain, but it usually results in a better DX for the developer. Blocks mean less "redundant" code, but it also means more complexity for the developer. They don't need to install new components and they don't need to learn new patterns, but they're also responsible for ensuring that the primitives they're using are compatible with each other.
+
+## The AI SDK ecosystem is evolving rapidly. How do you think about building components that remain flexible as AI capabilities and patterns continue to change?
+
+One of the things I've learned working on AI Elements is to take the current patterns of models with a grain of salt. Until recently, we all saw pre-response reasoning as the defacto solution for thinking models, now we're seeing chain-of-thought style thinking patterns emerge where there's multiple steps to the reasoning process.
+
+I don't think it's important to build robust components that stand the test of time, but to adapt quickly and keep up with the latest patterns. For example, our PromptInput component historically had a simple ModelSelector dropdown built in, but the advent of [AI Gateway](https://vercel.com/ai-gateway) meant we needed a more flexible solution for way more data. So, we split this out into a new component called ModelSelector that can do this.
+
+<PullQuote content="I don't think it's important to build robust components that stand the test of time, but to adapt quickly and keep up with the latest patterns."  />
+
+Just do your best to create a neat abstraction and keep it flexible enough to adapt to the latest patterns.
+
+## You've built component libraries both within large organizations and as open source projects. How does the approach differ between building for internal teams versus the broader community?
+
+Nowadays they're not all that different. I treat internal projects with the same level of care and attention as public projects. Partially because my efforts will directly impact the happiness of my teammates, but also because there's a good chance that if the product is useful, it might end up getting open sourced.
+
+The only real difference is the level of scrutiny and the expectations of the audience. Internal projects are usually more forgiving of mistakes and have a higher tolerance for complexity, while public projects are expected to be more polished and have a higher standard of quality.
+
+But again, I try to treat them all the same.
+
+## You've mentioned loving to design "minimal, elegant library APIs." What makes an API elegant to you, and can you give an example of one you're particularly proud of?
+
+The difference between a developer-focused product thats loved and one thats hated is the developer experience i.e. how easy it is to use the API / SDK. Elegant APIs are simple, predictable and easy to understand. They're not just about the code, they're about the entire experience.
+
+There's a lot of different ways to measure this - how easy it is to understand, how fast you can get it into your project and working, how much code you need to write, how many new patterns or mental models you need to learn, etc. Basically, it's how it feels holistically, not just at the start or the end of the project.
+
+I'm taking a bit of liberty with the definition of "API" here, but one of my favourite projects has always been [Ultracite](https://github.com/haydenbleasel/ultracite). Basically it's an optionated, zero-config toolchain for linting and formatting.
+
+The reason I love it so much is because of the amount of thought that went in to reducing every part of it. Instead of spending 15 minutes creating config files, you run a `npx` setup command and it generates it all for you. Where you previously had to write hundreds of lines of config, you just have 2 lines to extend a preset.
+
+It's the only thing I've created that I've used in every single project I've worked on, without exception. I set it up once, in one minute, and it works forever.
+
+Like Todd Howard says, it Just Works™.

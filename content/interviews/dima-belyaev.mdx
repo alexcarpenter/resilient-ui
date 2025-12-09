@@ -1,0 +1,104 @@
+---
+title: Dima Belyaev
+description: Staff front-end engineer based in Amsterdam, working on AI assistants at Shopify.
+avatar: /img/dima-belyaev.jpg
+published: 2025-10-30
+social:
+  website: https://blvdmitry.me
+  github: https://github.com/blvdmitry
+  twitter: https://x.com/blvdmitry
+  bluesky: https://bsky.app/profile/blvdmitry.me
+---
+
+## To start off, could you tell us a bit about yourself and how you first got started in this field?
+
+Hi 👋 I’m Dima, a front-end engineer with about 15 years of experience. I’m currently a Staff Engineer at Shopify and also work on my own design system called [Reshaped](https://reshaped.so).
+
+For most of my career, I’ve been involved with design systems in one way or another, so I considered that to be my strong side. I landed my first full-time job right after university in 2012, and just a few months later, we started building mobile versions of our products. We had 13 completely separate products that needed a unified design language, and that’s how I ended up creating a design system before the term has even became mainstream. We didn’t have Figma to design it or React to build it, but it was something new, exciting and fun. I loved working on those redesigns for the next two years, updating all the mobile projects and later expanding the same system for desktop.
+
+That experience made me pay a lot more attention to how structure can improve product interfaces in every company I joined afterward. For the last seven years before joining Shopify, I worked at [Booking.com](http://booking.com/), where I built and led their design system from the ground up.
+
+After all these years, I realized that while I love working on design systems, I don’t enjoy how slow their development becomes once they become stable. So I looked in the mirror and figured out that what I truly enjoy is designing minimal, elegant library APIs (even outside of design systems), solving complex product UI challenges, and mixing in a bit of entrepreneurship and product engineering. Especially for products that deeply care about UX.
+
+And that’s exactly where I’ve landed this year: working on Sidekick at Shopify on the product engineering side, and building Reshaped — a design system that brings together everything I’ve learned so far, with the freedom to make decisions much faster than in a corporate environment.
+
+## When designing a component library like Reshaped, how do you balance flexibility and extensibility with maintaining accessibility and consistency across implementations?
+
+I’ve been following the same foundational principles for a long time, and I still think they hold up.
+
+One of the earliest “design system 101” rules floating around the internet was that components shouldn’t define their own margins since that affects the parent layout. Max Stoiber helped spread this idea further with [his article](https://mxstbr.com/thoughts/margin) in 2020. I’ve always taken that principle to the extreme — treating each component as a self-contained micro-application that should render and work anywhere, without knowing much (or anything) about its parent.
+
+The second idea that goes hand in hand with this is keeping the API surface as small as possible. I believe that, at least in the first iteration, components and libraries should solve as much as they can internally without exposing too much to the outside world. We often start building with a bunch of technical limitations already in mind: performance concerns, dependency constraints, even accessibility. Sometimes we do this too early.
+
+My approach is to start by writing a snippet of how the library or component should be used in the product. I think about the ideal API, prop names that feel natural, and how to keep the number of arguments to a minimum.
+
+<PullQuote content="I start by writing a snippet of how the library or component should be used in the product… then I start ‘making it worse’ by introducing real-world limitations and requirements." />
+
+Once I’m happy with that, I start “making it worse” by introducing real-world limitations and requirements. Which props do I actually need to make the component accessible in all cases? Which internal parts are too expensive to automate? In the end, this process usually leads me to a sweet spot — a balance between requirements and the best possible developer experience, often forcing me to think creatively to get there.
+
+<QuestionAnswer title="Quick five">
+  ### What’s your most-played song or artist on Spotify right now?
+
+  My playlists are a complete mess with no specific preference. Lately though, I’ve been listening to a lot of Jacob Collier.
+
+  ### What’s your go-to drink or snack when you’re deep in design or coding mode?
+
+  Just a bit of coffee and some water.
+
+  ### If you weren’t doing what you do now, what kind of job could you see yourself in?
+
+  No idea, but I do know I enjoy designing isolated parts of systems. So maybe something along those lines, but for physical objects or creating 3D assets.
+
+  ### Is there an app, tool, or website you’re obsessed with lately — design-related or not?
+
+  Besides the usual popular apps, I still use one called Must to keep track of movies and series I want to watch. I don’t think it’s being updated anymore, but the UX is still great and it solves a real problem for me.
+
+  ### When you actually manage to unplug, how do you like to spend your downtime?
+
+  I like video games like many engineers 😅 
+
+  Outside of that, I’m learning to play piano and like to travel somewhere warm.
+</QuestionAnswer>
+
+## How do you prevent teams from unintentionally breaking accessibility features when customizing components?
+
+I think it all comes down to trusting the other developers on the team.
+
+Engineers and designers usually customize components only when those components don’t meet their expectations or requirements. That often happens because design system teams try to build components and write guidelines that are meant to be followed 100% of the time. This approach creates a lot of limitations in the name of consistency and makes it harder to adapt components to scenarios the design system team didn’t anticipate. Overriding component behavior then becomes the only way to get things done and those overrides tend to be messy and hard to maintain.
+
+I believe design systems should instead provide more low-level utilities, not just polished, “complete” high-level components. High-level components help you build most of your product, but utilities let teams build the rest while staying working within the system, not against it. It might mean engineers have to do a bit more due diligence and learn more about accessibility, design tokens, or rendering performance, but in the end, that keeps the product in a much better place.
+
+## Having built UI at massive scale for companies like Booking.com and Shopify, what are the key principles or practices that help ensure resilience and performance across such large user bases?
+
+Composition is your friend. At scale, you might think you’ve covered every possible use case for a component but trust me, you haven’t. Even if your components can build the whole product today, that won’t be true a year from now. Give people an easy way to combine smaller pieces of the UI instead of building huge, all-in-one components for them. Spend your time making sure those smaller bits work well together out of the box.
+
+<PullQuote content="At scale, you might think you’ve covered every possible use case for a component but trust me, you haven’t… Give people an easy way to combine smaller pieces of the UI instead of building huge, all-in-one components." />
+
+Another area where smaller composable pieces shine is documentation. Let’s be honest — most people don’t like reading docs. Composition lets you focus more on examples rather than documenting hundreds of props. Visual examples make it easier for people to get started, and they can adjust them however they need.
+
+Finally, at scale, design systems aren’t just about how components work today. They’re about how to keep them stable for years without constant breaking changes. So while it’s important not to cut corners, experience gives you a sense of which trade-offs are worth making and which parts need to be more robust before the product even demands it.
+
+## Which component do you most enjoy building, and which one do you find the most challenging or frustrating—and why?
+
+Out of all the “static” components, the hardest one is obviously the button. People often think it’s the easiest or the first to build, but it’s actually the most complex. It depends on all the foundational pieces such as color and typography tokens, plus lower-level components like Icon or Spinner. And then come the endless variants and prop combinations. For example, the Reshaped Figma library has over 1,400 button variants, even after I split them into two components 🫠
+
+For “interactive” components, the toughest is definitely a Popover or Dropdown, especially if you’re building it from scratch (which I did in Reshaped). These involve the hardest parts of a design system: calculating positioning and handling focus trapping. I wrote an article about what it takes to build one if you want to dive deeper: https://reshaped.so/blog/building-a-dropdown
+
+As for the components I enjoy building the most, I’d say it’s the complex, one-off product experiences right now. I’ve built several design systems before, so adding a new component often feels like repeating a familiar pattern but creating something entirely new always feels exciting.
+
+## What makes a component especially satisfying or painful to design well?
+
+In my opinion, the hardest part is turning automated scripts or “systemic” solutions into something that *feels* tailored to a specific feature. Design systems let us automate work and reduce implementation costs, but the best product UX often feels like a one-off, full of micro-interactions and tiny details that make each part of the product look polished.
+
+Finding ways to make that happen without going against the system your company is building is one of the most underrated and difficult challenges.
+
+## Everyone’s got their go-to sources for inspiration — what are some of yours? And who’s been sparking ideas for you lately?
+
+While I’d say I’m a good engineer with a decent sense of design, my design skills are definitely not as strong as my engineering ones. To balance that out, I follow a lot of great designers and design engineers on social media. There are plenty of well-known names out there. A few of the accounts I’m following are:
+
+- [usrnk1](https://x.com/usrnk1) for the saas shots
+- [merycodes](https://x.com/merycodes) for amazing ui demos
+- [natkohasic](https://x.com/natkohasic) for his great design aesthetics
+- [msllrs](https://x.com/msllrs) for the design system vibes, which got us working together on the next component pack in Reshaped
+
+Outside of social media, I love watching series/movies and reading hands-on stories on craft and entrepreneurship. That could include shows like Bear and Abstract and books like Build.

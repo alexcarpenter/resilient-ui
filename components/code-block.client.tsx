@@ -163,7 +163,7 @@ export function CodeBlockTabs({
     <TabsPrimitive.Root
       {...props}
       className={cn(
-        "rounded-[calc(var(--radius-lg)_+_calc(var(--spacing)_*_1))] bg-neutral-900 p-1",
+        "rounded-[calc(var(--radius-lg)+calc(var(--spacing)*1))] bg-neutral-900 p-1",
         className
       )}
     />
@@ -180,7 +180,7 @@ export function CodeBlockTabsList({
     <TabsPrimitive.List
       {...props}
       className={cn(
-        "flex overflow-x-auto [mask-image:linear-gradient(to_right,transparent_0%,black_calc(var(--spacing)_*_4),black_calc(100%_-_calc(var(--spacing)_*_4)),_transparent_100%)] px-4 [scrollbar-color:var(--color-neutral-700)_transparent] [scrollbar-width:thin]",
+        "flex overflow-x-auto mask-[linear-gradient(to_right,transparent_0%,black_calc(var(--spacing)*4),black_calc(100%-calc(var(--spacing)*4)),transparent_100%)] px-4 [scrollbar-color:var(--color-neutral-700)_transparent] [scrollbar-width:thin]",
         className
       )}
     />

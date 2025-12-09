@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/lib/config"
 
@@ -18,6 +19,7 @@ const fontMono = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: { default: siteConfig.title, template: `%s | ${siteConfig.title}` },
   description: siteConfig.description,
 }
@@ -34,6 +36,7 @@ export default function RootLayout({
           <div className="background-grid h-3" />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
