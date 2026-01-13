@@ -1,8 +1,9 @@
 import fs from "fs"
 import path from "path"
+import { CodeBlock } from "@/components/code-block.server"
 
 export default async function SkillPage() {
-  const mdPath = path.join(process.cwd(), "app", "skill", "skill.md")
+  const mdPath = path.join(process.cwd(), "public", "skill.md")
   let md = ""
   try {
     md = fs.readFileSync(mdPath, "utf8")
@@ -33,8 +34,10 @@ export default async function SkillPage() {
       </header>
 
       <section className="px-4 pb-32">
-        <div className="bg-muted mx-auto mb-16 max-w-4xl rounded-md p-4 whitespace-pre-wrap">
-          {md}
+        <div className="mx-auto mb-16 max-w-4xl">
+          <CodeBlock lang="mdx" title="resilient-ui-skill.md">
+            {md}
+          </CodeBlock>
         </div>
       </section>
     </>
