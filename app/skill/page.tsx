@@ -1,6 +1,12 @@
 import fs from "fs"
 import path from "path"
 import { CodeBlock } from "@/components/code-block.server"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Skill.md",
+  description: "",
+}
 
 export default async function SkillPage() {
   const mdPath = path.join(process.cwd(), "public", "skill.md")
@@ -13,24 +19,25 @@ export default async function SkillPage() {
 
   return (
     <>
-      <header className="flex flex-col items-center px-4 py-32 text-center">
-        <h1
-          className="mt-8 max-w-4xl text-xl text-balance uppercase md:text-3xl"
-          style={{
-            fontStretch: "200%",
-            fontWeight: "900",
-          }}
-        >
-          Skill
-          <span
-            className="text-muted-foreground"
+      <header className="flex flex-col items-center px-4 py-32">
+        <div className="max-content">
+          <p className="text-muted-foreground flex items-center justify-between font-mono text-xs">
+            v0.0.1
+          </p>
+          <h1
+            className="max-w-4xl text-xl text-balance uppercase md:text-3xl"
             style={{
-              fontWeight: "100",
+              fontStretch: "200%",
+              fontWeight: "900",
             }}
           >
-            .md
-          </span>
-        </h1>
+            Skill&mdash;MD
+          </h1>
+        </div>
+
+        <CodeBlock lang="bash" title="Install" className="mt-8">
+          curl -fsSL https://www.resilient-ui.com/install | bash
+        </CodeBlock>
       </header>
 
       <section className="px-4 pb-32">
