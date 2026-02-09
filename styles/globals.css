@@ -81,11 +81,7 @@
           z-index: 20;
           display: inline-block;
           width: calc(var(--spacing) * 4);
-          background: linear-gradient(
-            to right,
-            var(--background) 80%,
-            transparent
-          );
+          background: linear-gradient(to right, var(--background), transparent);
           color: var(--foreground);
           text-align: right;
           content: " ";
@@ -97,6 +93,11 @@
           width: 2.5rem;
           padding-right: 0.75rem;
           color: #8b8b8b94;
+          background: linear-gradient(
+            to right,
+            var(--background) 80%,
+            transparent
+          );
         }
 
         &::after {

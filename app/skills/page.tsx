@@ -61,12 +61,12 @@ export default async function SkillsPage() {
 
       <section className="px-4 pb-32">
         <div className="mx-auto mb-16 max-w-4xl space-y-4">
-          <CodeBlock lang="mdx" title="leading-icon-alignment/SKILL.md">
+          <CodeBlock lang="mdx" title="leading-icon-alignment/SKILL.md" data-line-numbers>
             {leadingIconMd}
           </CodeBlock>
         </div>
         <div className="mx-auto mb-16 max-w-4xl space-y-4">
-          <CodeBlock lang="mdx" title="trailing-icon-alignment/SKILL.md">
+          <CodeBlock lang="mdx" title="trailing-icon-alignment/SKILL.md" data-line-numbers>
             {trailingIconMd}
           </CodeBlock>
         </div>
