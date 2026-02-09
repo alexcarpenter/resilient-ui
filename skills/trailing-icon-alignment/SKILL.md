@@ -22,7 +22,7 @@ Ensures trailing icons always remain visually attached to the last line of text 
 ## Implementation
 
 ```html
-<p class="relative inline-block pr-5">
+<a href="/" class="relative inline-block pr-5">
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, illum.
   <svg
     class="absolute ml-1 inline h-6 w-4 shrink-0"
@@ -36,7 +36,7 @@ Ensures trailing icons always remain visually attached to the last line of text 
     <path d="M7 7h10v10" />
     <path d="M7 17 17 7" />
   </svg>
-</p>
+</a>
 ```
 
 ## Key Points
