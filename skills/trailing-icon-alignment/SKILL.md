@@ -23,7 +23,7 @@ Ensures trailing icons always remain visually attached to the last line of text 
 
 ```html
 <a href="/" class="relative inline-block pr-5">
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, illum.
+  View documentation
   <svg
     class="absolute ml-1 inline h-6 w-4 shrink-0"
     viewBox="0 0 24 24"
