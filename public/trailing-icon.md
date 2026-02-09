@@ -1,18 +1,19 @@
 ---
 name: resilient-ui-trailing-icon
-description: Ensures trailing icons properly wrap with the text.
+description: Ensures trailing icons remain visually attached to the last line of text when text wraps. Use when implementing inline text with trailing icons, external link indicators, or when fixing trailing icon alignment issues in wrapped text.
 ---
 
 # Trailing Icon Alignment
 
-Ensures trailing icons always properly aligned wrap with the text it is placed within.
+Ensures trailing icons always remain visually attached to the last line of text when the text wraps, preventing the icon from being orphaned on a new line.
 
 ## Rules
 
 - **MUST**: Use `relative inline-block` on the container element
-- **MUST**: Use padding-right (`pr-5` or equivalent) to create space for the icon
+- **MUST**: Use padding-right (`pr-5` or equivalent) to reserve space for the icon
 - **MUST**: Use `absolute inline` positioning on the SVG icon
 - **MUST**: Use height on the SVG that matches the line height of the text (`h-6` or equivalent)
+- **NEVER**: Place the icon as a flex sibling or block-level sibling — it will not wrap with the text
 
 ## Implementation
 
@@ -20,7 +21,7 @@ Ensures trailing icons always properly aligned wrap with the text it is placed w
 <p class="relative inline-block pr-5">
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, illum.
   <svg
-    class="absolute inline h-6 w-4"
+    class="absolute inline h-6 w-4 shrink-0"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -36,8 +37,8 @@ Ensures trailing icons always properly aligned wrap with the text it is placed w
 
 ## Key Points
 
-- `relative inline-block` creates a positioning context and allows the container to wrap with text
-- `pr-5` (padding-right) reserves space for the icon so text doesn't overlap
-- `absolute inline` positions the icon absolutely within the container while maintaining inline flow behavior
-- The SVG height (`h-6`) matches the text line height for proper alignment
-- The icon naturally wraps with the text
+- `inline-block` on the container causes the trailing padding and icon to stay attached to the last word, wrapping together as a unit
+- `pr-5` (padding-right) must be at least as wide as the icon (`w-4`) to prevent text overlap
+- `absolute` positions the icon within its container; `inline` keeps it participating in the text flow
+- The SVG height (`h-6`) matches the text line height for vertical alignment
+- This approach prevents the icon from being orphaned on a new line at narrow widths
