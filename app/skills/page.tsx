@@ -4,8 +4,8 @@ import { CodeBlock } from "@/components/code-block.server"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Skill.md",
-  description: "A skill that helps you build resilient user interfaces.",
+  title: "Skills.md",
+  description: "Skills that help you build resilient user interfaces.",
 }
 
 export default async function SkillPage() {
