@@ -1,6 +1,6 @@
 ---
-name: Resilient UI skill
-description: A skill that helps you build resilient user interfaces.
+name: Resilient UI
+description: A skill that helps you build resilient user interfaces. Use when implementing or refactoring UI patterns.
 ---
 
 # Resilient UI
