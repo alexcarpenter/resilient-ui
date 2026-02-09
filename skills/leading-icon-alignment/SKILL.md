@@ -24,7 +24,7 @@ Ensures leading icons within lists are always properly aligned to the first line
 <ul>
   <li class="flex gap-2">
     <svg
-      class="h-6 w-4 shrink-0"
+      class="h-lh w-4 shrink-0"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

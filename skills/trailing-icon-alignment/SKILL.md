@@ -25,7 +25,7 @@ Ensures trailing icons always remain visually attached to the last line of text 
 <a href="/" class="relative inline-block pr-5">
   View documentation
   <svg
-    class="absolute ml-1 inline h-6 w-4 shrink-0"
+    class="absolute ml-1 inline h-lh w-4 shrink-0"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
