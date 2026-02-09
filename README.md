@@ -1,4 +1,6 @@
-# Resilient — UI
+# RESILIENT — UI
+
+Resources for building resilient user interfaces.
 
 ## License
 
