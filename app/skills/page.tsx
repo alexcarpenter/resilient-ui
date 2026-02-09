@@ -4,7 +4,7 @@ import { CodeBlock } from "@/components/code-block.server"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Skills.md",
+  title: "SKILLS.md",
   description: "Skills that help you build resilient user interfaces.",
 }
 
