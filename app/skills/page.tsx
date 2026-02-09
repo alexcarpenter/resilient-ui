@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Skills that help you build resilient user interfaces.",
 }
 
-export default async function SkillPage() {
+export default async function SkillsPage() {
   const leadingIconPath = path.join(process.cwd(), "skills", "leading-icon-alignment", "SKILL.md")
   const trailingIconPath = path.join(process.cwd(), "skills", "trailing-icon-alignment", "SKILL.md")
 
@@ -29,8 +29,8 @@ export default async function SkillPage() {
 
   return (
     <>
-      <header className="flex flex-col items-center px-4 py-32 text-center">
-        <div className="fit-content text-left">
+      <header className="flex flex-col items-center px-4 py-32">
+        <div className="fit-content">
           <p className="text-muted-foreground flex items-center justify-between font-mono text-xs">
             <span>v0.0.1</span>
           </p>
@@ -52,7 +52,12 @@ export default async function SkillPage() {
             </span>
           </h1>
         </div>
-      </header>
+        <div className="mt-4">
+          <CodeBlock lang="bash" title="Install">
+            npx skills add alexcarpenter/resilient-ui
+          </CodeBlock>
+        </div>
+      </header >
 
       <section className="px-4 pb-32">
         <div className="mx-auto mb-16 max-w-4xl space-y-4">
