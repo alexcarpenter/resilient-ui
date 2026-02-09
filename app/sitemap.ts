@@ -12,6 +12,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: url("/skills"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...interviewsSource.getPages().flatMap((page) => {
       const { lastModified } = page.data
 
