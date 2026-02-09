@@ -5,7 +5,7 @@ description: Ensures trailing icons properly wrap with the text.
 
 # Trailing Icon Alignment
 
-Ensures trailing icons are always properly aligned to the first line of text when the text wraps.
+Ensures trailing icons always properly aligned wrap with the text it is placed within.
 
 ## Rules
 
