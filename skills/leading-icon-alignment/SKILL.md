@@ -14,8 +14,8 @@ Ensures leading icons within lists are always properly aligned to the first line
 ## Rules
 
 - **MUST**: Use `flex` on the list item container
-- **MUST**: Use height on the SVG that matches the line height of the adjacent text (`h-6` for default `text-base`/`1.5rem` line height)
-- **MUST**: Use `flex-shrink: 0` (or `shrink-0` in Tailwind) on the icon to prevent it from compressing at narrow widths
+- **MUST**: Use height on the SVG that matches the line height of the adjacent text `height: 1lh` (or `h-lh` in Tailwind)
+- **MUST**: Use `flex-shrink: 0` (`shrink-0` in Tailwind) on the icon to prevent it from compressing at narrow widths
 - **NEVER**: Use `align-items: center` (`items-center` in Tailwind) on the flex container — it vertically centers the icon across all lines of wrapped text instead of aligning to the first line
 
 ## Implementation
@@ -42,7 +42,7 @@ Ensures leading icons within lists are always properly aligned to the first line
 
 ## Key Points
 
-- The SVG height (`h-6`) must match the text line height so the icon visually centers within the first line of text
+- The SVG height uses (`h-lh`) to match the text line height so the icon visually centers within the first line of text
 - `shrink-0` prevents the icon from compressing when the container is narrow — without it the icon distorts before text wraps
 - Flex defaults to `align-items: stretch`, but because the SVG has a fixed height, it effectively sits at the top — aligned to the first line
 - `gap-2` provides consistent spacing between icon and text without needing padding or margin on either element

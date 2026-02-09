@@ -44,5 +44,4 @@ Ensures trailing icons always remain visually attached to the last line of text 
 - `inline-block` on the container causes the trailing padding and icon to stay attached to the last word, wrapping together as a unit
 - `pr-5` (padding-right) must be at least as wide as the icon (`w-4`) to prevent text overlap
 - `absolute` positions the icon within its container; `inline` keeps it participating in the text flow
-- The SVG height (`h-6`) matches the text line height for vertical alignment
 - This approach prevents the icon from being orphaned on a new line at narrow widths
