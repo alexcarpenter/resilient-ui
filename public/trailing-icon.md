@@ -1,5 +1,5 @@
 ---
-name: trailing-icon
+name: resilient-ui-trailing-icon
 description: Ensures trailing icons properly wrap with the text.
 ---
 
