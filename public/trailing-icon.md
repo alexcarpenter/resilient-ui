@@ -40,4 +40,4 @@ Ensures trailing icons are always properly aligned to the first line of text whe
 - `pr-5` (padding-right) reserves space for the icon so text doesn't overlap
 - `absolute inline` positions the icon absolutely within the container while maintaining inline flow behavior
 - The SVG height (`h-6`) matches the text line height for proper alignment
-- The icon naturally aligns to the baseline/first line of text
+- The icon naturally wraps with the text
