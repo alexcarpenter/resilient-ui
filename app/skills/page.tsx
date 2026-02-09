@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 }
 
 export default async function SkillPage() {
-  const leadingIconPath = path.join(process.cwd(), "public", "leading-icon.md")
-  const trailingIconPath = path.join(process.cwd(), "public", "trailing-icon.md")
+  const leadingIconPath = path.join(process.cwd(), "skills", "leading-icon-alignment", "SKILL.md")
+  const trailingIconPath = path.join(process.cwd(), "skills", "trailing-icon-alignment", "SKILL.md")
 
   let leadingIconMd = ""
   let trailingIconMd = ""
@@ -55,13 +55,13 @@ export default async function SkillPage() {
       </header>
 
       <section className="px-4 pb-32">
-        <div className="mx-auto mb-16 max-w-4xl">
-          <CodeBlock lang="mdx" title="leading-icon.md">
+        <div className="mx-auto mb-16 max-w-4xl space-y-4">
+          <CodeBlock lang="mdx" title="leading-icon-alignment/SKILL.md">
             {leadingIconMd}
           </CodeBlock>
         </div>
-        <div className="mx-auto mb-16 max-w-4xl">
-          <CodeBlock lang="mdx" title="trailing-icon.md">
+        <div className="mx-auto mb-16 max-w-4xl space-y-4">
+          <CodeBlock lang="mdx" title="trailing-icon-alignment/SKILL.md">
             {trailingIconMd}
           </CodeBlock>
         </div>

@@ -1,5 +1,5 @@
 ---
-name: resilient-ui-leading-icon
+name: leading-icon-alignment
 description: Ensures leading icons in lists are properly aligned to the first line of text when text wraps, preventing icons from vertically centering across multiple lines. Use when implementing list items with leading icons, SVG icons in flex containers, or when fixing icon alignment issues in wrapped text.
 ---
 
