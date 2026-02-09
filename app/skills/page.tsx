@@ -30,7 +30,7 @@ export default async function SkillsPage() {
   return (
     <>
       <header className="flex flex-col items-center px-4 py-32">
-        <div className="fit-content">
+        <div>
           <p className="text-muted-foreground flex items-center justify-between font-mono text-xs">
             <span>v0.1.0</span>
           </p>
@@ -52,7 +52,7 @@ export default async function SkillsPage() {
             </span>
           </h1>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 max-w-full">
           <CodeBlock lang="bash" title="Install">
             npx skills add alexcarpenter/resilient-ui
           </CodeBlock>
