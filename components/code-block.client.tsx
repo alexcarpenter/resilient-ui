@@ -35,7 +35,7 @@ export function CodeBlock({
       ref={ref}
       {...props}
       className={cn(
-        "overflow-hidden rounded-lg border border-neutral-800",
+        "overflow-hidden rounded-lg border border-neutral-800 bg-neutral-950",
         className
       )}
     >
