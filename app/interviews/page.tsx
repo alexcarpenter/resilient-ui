@@ -18,18 +18,22 @@ export default async function Page() {
 
   return (
     <>
-      <p className="text-vesper-orange flex items-center justify-between font-mono text-xs uppercase">
-        Resilient&mdash;UI
-      </p>
-      <h1
-        className="max-w-4xl text-xl text-balance uppercase md:text-3xl"
-        style={{
-          fontStretch: "200%",
-          fontWeight: "900",
-        }}
-      >
-        Interviews
-      </h1>
+      <header className="flex flex-col items-center px-4 py-32">
+        <div>
+          <p className="text-vesper-orange flex items-center justify-between font-mono text-xs uppercase">
+            Resilient&mdash;UI
+          </p>
+          <h1
+            className="max-w-4xl text-xl text-balance uppercase md:text-3xl"
+            style={{
+              fontStretch: "200%",
+              fontWeight: "900",
+            }}
+          >
+            Interviews
+          </h1>
+        </div>
+      </header>
       <ul>
         {posts.map((post) => (
           <li key={post.url}>
