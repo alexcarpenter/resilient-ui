@@ -9,8 +9,18 @@ export const metadata: Metadata = {
 }
 
 export default async function SkillsPage() {
-  const leadingIconPath = path.join(process.cwd(), "skills", "leading-icon-alignment", "SKILL.md")
-  const trailingIconPath = path.join(process.cwd(), "skills", "trailing-icon-alignment", "SKILL.md")
+  const leadingIconPath = path.join(
+    process.cwd(),
+    "skills",
+    "leading-icon-alignment",
+    "SKILL.md"
+  )
+  const trailingIconPath = path.join(
+    process.cwd(),
+    "skills",
+    "trailing-icon-alignment",
+    "SKILL.md"
+  )
 
   let leadingIconMd = ""
   let trailingIconMd = ""
@@ -31,8 +41,8 @@ export default async function SkillsPage() {
     <>
       <header className="flex flex-col items-center px-4 py-32">
         <div>
-          <p className="text-muted-foreground flex items-center justify-between font-mono text-xs">
-            <span>v0.1.0</span>
+          <p className="text-vesper-orange flex items-center justify-between font-mono text-xs uppercase">
+            Resilient&mdash;UI
           </p>
           <h1
             className="max-w-4xl text-xl text-balance uppercase md:text-3xl"
@@ -52,21 +62,29 @@ export default async function SkillsPage() {
             </span>
           </h1>
         </div>
-        <div className="mt-4 max-w-full">
+        <div className="mt-8 max-w-full">
           <CodeBlock lang="bash" title="Install">
             npx skills add alexcarpenter/resilient-ui
           </CodeBlock>
         </div>
-      </header >
+      </header>
 
       <section className="px-4 pb-32">
         <div className="mx-auto mb-16 max-w-4xl space-y-4">
-          <CodeBlock lang="mdx" title="leading-icon-alignment/SKILL.md" data-line-numbers>
+          <CodeBlock
+            lang="mdx"
+            title="leading-icon-alignment/SKILL.md"
+            data-line-numbers
+          >
             {leadingIconMd}
           </CodeBlock>
         </div>
         <div className="mx-auto mb-16 max-w-4xl space-y-4">
-          <CodeBlock lang="mdx" title="trailing-icon-alignment/SKILL.md" data-line-numbers>
+          <CodeBlock
+            lang="mdx"
+            title="trailing-icon-alignment/SKILL.md"
+            data-line-numbers
+          >
             {trailingIconMd}
           </CodeBlock>
         </div>
