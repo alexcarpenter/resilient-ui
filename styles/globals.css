@@ -53,6 +53,7 @@
     background-color: transparent !important;
     scrollbar-width: thin;
     scrollbar-color: var(--color-neutral-700) transparent;
+    overscroll-behavior-x: contain;
 
     code {
       background-color: var(--background);
