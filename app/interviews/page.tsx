@@ -17,14 +17,28 @@ export default async function Page() {
     )
 
   return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.url}>
-          <h2>
-            <Link href={post.url}>{post.data.title}</Link>
-          </h2>
-        </li>
-      ))}
-    </ul>
+    <>
+      <p className="text-vesper-orange flex items-center justify-between font-mono text-xs uppercase">
+        Resilient&mdash;UI
+      </p>
+      <h1
+        className="max-w-4xl text-xl text-balance uppercase md:text-3xl"
+        style={{
+          fontStretch: "200%",
+          fontWeight: "900",
+        }}
+      >
+        Interviews
+      </h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.url}>
+            <h2>
+              <Link href={post.url}>{post.data.title}</Link>
+            </h2>
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
