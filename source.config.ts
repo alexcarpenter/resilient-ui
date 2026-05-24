@@ -1,4 +1,5 @@
 import { defineConfig, defineCollections } from "fumadocs-mdx/config"
+import lastModified from "fumadocs-mdx/plugins/last-modified"
 import { z } from "zod"
 import { rehypeQuestionAnswer } from "./lib/rehype-question-answer"
 
@@ -22,6 +23,7 @@ export const interviews = defineCollections({
 })
 
 export default defineConfig({
+  plugins: [lastModified()],
   mdxOptions: {
     rehypePlugins: [rehypeQuestionAnswer],
     rehypeCodeOptions: {

@@ -27,13 +27,13 @@ export default async function SkillsPage() {
 
   try {
     leadingIconMd = fs.readFileSync(leadingIconPath, "utf8")
-  } catch (e) {
+  } catch {
     leadingIconMd = "Markdown file not found: " + leadingIconPath
   }
 
   try {
     trailingIconMd = fs.readFileSync(trailingIconPath, "utf8")
-  } catch (e) {
+  } catch {
     trailingIconMd = "Markdown file not found: " + trailingIconPath
   }
 

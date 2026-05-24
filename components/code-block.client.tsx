@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/utils"
 import { CheckIcon, CopyIcon } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
-import { Tabs as TabsPrimitive } from "@base-ui-components/react/tabs"
+import { Tabs as TabsPrimitive } from "@base-ui/react/tabs"
 
 /* -------------------------------------------------------------------------------------------------
  * CodeBlock
@@ -197,19 +197,19 @@ export function CodeBlockTabsTrigger({
   return (
     <TabsPrimitive.Tab
       {...props}
-      className={({ selected }) =>
+      className={({ active }) =>
         cn(
           "group/tab relative h-11 border-b px-1 text-sm transition-colors",
           {
-            "border-[#FFC799] text-neutral-50": selected,
+            "border-[#FFC799] text-neutral-50": active,
             "border-transparent bg-transparent text-neutral-400 hover:text-neutral-50":
-              !selected,
+              !active,
           },
           className
         )
       }
     >
-      <span className="rounded-md p-2 transition-colors group-[&:not([data-selected])]/tab:group-hover/tab:bg-neutral-800">
+      <span className="rounded-md p-2 transition-colors group-[&:not([data-active])]/tab:group-hover/tab:bg-neutral-800">
         {children}
       </span>
     </TabsPrimitive.Tab>

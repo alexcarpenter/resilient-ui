@@ -1,8 +1,8 @@
-import { createMDXSource } from "fumadocs-mdx"
 import { loader } from "fumadocs-core/source"
-import { interviews as interviewPosts } from "@/.source"
+import { toFumadocsSource } from "fumadocs-mdx/runtime/server"
+import { interviews as interviewPosts } from "@/.source/server"
 
 export const interviewsSource = loader({
   baseUrl: "/interviews",
-  source: createMDXSource(interviewPosts, []),
+  source: toFumadocsSource(interviewPosts, []),
 })

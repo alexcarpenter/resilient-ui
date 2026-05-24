@@ -2,16 +2,16 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { PageTree } from 'fumadocs-core/server';
+import type { Folder, Root } from 'fumadocs-core/page-tree';
 
 interface DocsNavProps {
-  tree: PageTree.Root;
+  tree: Root;
 }
 
 export function DocsNav({ tree }: DocsNavProps) {
   const pathname = usePathname();
 
-  const renderTree = (nodes: PageTree.Root) => {
+  const renderTree = (nodes: Root | Folder) => {
     return nodes.children?.map((node) => {
       if (node.type === 'folder') {
         return (
