@@ -2,9 +2,9 @@ packages:
   - .
 
 onlyBuiltDependencies:
-  - esbuild@0.28.0
-  - sharp@0.34.5
-  - unrs-resolver@1.12.2
+  - esbuild
+  - sharp
+  - unrs-resolver
 
 ignoredBuiltDependencies:
-  - msw@2.14.6
+  - msw
