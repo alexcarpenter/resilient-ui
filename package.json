@@ -38,7 +38,7 @@
     "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.3",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.4.2",
     "mdast-util-mdx-jsx": "3.2.0",
     "prettier": "3.8.3",
     "prettier-plugin-tailwindcss": "0.8.0",
